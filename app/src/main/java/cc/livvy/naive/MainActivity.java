@@ -17,12 +17,11 @@ public class MainActivity extends AppCompatActivity {
 
     protected FragmentTabHost fragmentTabHost;
 
-    private String mTextTitle[] = {"home","compass","add","message","user"};
+    private String mTextTitle[] = {"chat","compass","message","user"};
 
     private int mDrawableSelector[] = {
-            R.drawable.main_tab_home_selector,
+            R.drawable.main_tab_chat_selector,
             R.drawable.main_tab_compass_selector,
-            R.drawable.main_tab_add_selector,
             R.drawable.main_tab_message_selector,
             R.drawable.main_tab_user_selector
     };
@@ -47,12 +46,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private View getView(int i) {
-        View view;
-        if(i == 2){
-            view = View.inflate(MainActivity.this, R.layout.tab_bottom_menu_center, null);
-        }else{
-            view = View.inflate(MainActivity.this, R.layout.tab_bottom_menu, null);
-        }
+        View view = View.inflate(MainActivity.this, R.layout.tab_bottom_menu, null);
         ImageView imageView = (ImageView) view.findViewById(R.id.mImageIcon);
         imageView.setImageResource(mDrawableSelector[i]);
         return view;
