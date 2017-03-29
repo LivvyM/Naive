@@ -1,19 +1,15 @@
 package cc.livvy.naive;
 
-import android.content.Context;
 import android.support.v4.app.FragmentTabHost;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.util.DisplayMetrics;
 import android.view.View;
-import android.view.ViewGroup;
 import android.widget.ImageView;
-import android.widget.LinearLayout;
-import android.widget.RelativeLayout;
 import android.widget.TabHost;
-import android.widget.TextView;
 
-public class MainActivity extends AppCompatActivity {
+import cc.livvy.naive.base.AppBaseActivity;
+import cc.livvy.naive.mine.presentation.fragment.MineFragment;
+
+public class MainActivity extends AppBaseActivity {
 
     protected FragmentTabHost fragmentTabHost;
 
@@ -26,7 +22,7 @@ public class MainActivity extends AppCompatActivity {
             R.drawable.main_tab_user_selector
     };
 
-    private Class mFragmentArray[] = {TestFragment.class, TestFragment.class, TestFragment.class, TestFragment.class, TestFragment.class};
+    private Class mFragmentArray[] = {TestFragment.class, TestFragment.class, TestFragment.class, MineFragment.class};
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -48,12 +44,15 @@ public class MainActivity extends AppCompatActivity {
     private View getView(int i) {
         View view = View.inflate(MainActivity.this, R.layout.tab_bottom_menu, null);
         ImageView imageView = (ImageView) view.findViewById(R.id.mImageIcon);
+        View mViewDot = view.findViewById(R.id.mViewDot);
         imageView.setImageResource(mDrawableSelector[i]);
-        return view;
-    }
 
-    public static int dip2px(Context context, float dpValue) {
-        DisplayMetrics metrics = context.getResources().getDisplayMetrics();
-        return (int) (dpValue * metrics.density + 0.5f);
+        /**
+         * 添加主题设置
+         */
+        addThemeImageResource(imageView,mDrawableSelector[i]);
+        addThemeBackground(mViewDot,R.drawable.main_tab_text_selector);
+
+        return view;
     }
 }

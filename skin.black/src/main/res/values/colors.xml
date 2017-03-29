@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#FF1A1A1A</color>
+    <color name="colorPrimaryDark">#FF1A1A1A</color>
+    <color name="colorAccent">#FFCC3434</color>
+
+    <color name="theme">#FFCC3434</color>
+    <color name="white">#FFF8F8F8</color>
+
+    <color name="theme_color">#FF1A1A1A</color>
+    <color name="theme_text_color_mine_name">#FFF8F8F8</color>
+    <color name="theme_toolbar_title_text_color">#FFF8F8F8</color>
+</resources>

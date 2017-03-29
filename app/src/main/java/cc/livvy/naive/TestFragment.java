@@ -7,11 +7,13 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import cc.livvy.widget.skin.base.SkinBaseFragment;
+
 /**
  * Created by livvy on 17-3-28.
  */
 
-public class TestFragment extends Fragment{
+public class TestFragment extends SkinBaseFragment{
 
     @Nullable
     @Override

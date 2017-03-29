@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background"
+    android:clipToPadding="true"
+    android:fitsSystemWindows="true"
+    >
+
+
+    <include layout="@layout/layout_toolbar" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/unit_16px"
+        android:background="@color/white"
+        android:padding="@dimen/unit_30px"
+        android:orientation="horizontal">
+
+        <LinearLayout
+            android:id="@+id/mLayoutThemeWhite"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/drawable_white_click_background"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <ImageView
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:background="@color/line"
+                />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="官方白"
+                android:layout_marginTop="@dimen/unit_16px"
+                android:textSize="12sp"
+                android:textColor="@color/text_333"
+                />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/mLayoutThemeBlack"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@drawable/drawable_white_click_background"
+            android:gravity="center"
+            android:orientation="vertical">
+            <ImageView
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:background="@color/theme_black"
+                />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="官方黑"
+                android:layout_marginTop="@dimen/unit_16px"
+                android:textSize="12sp"
+                android:textColor="@color/text_333"
+                />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/mLayoutThemeRed"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@drawable/drawable_white_click_background"
+            android:gravity="center"
+            android:orientation="vertical">
+            <ImageView
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:background="@color/theme_red"
+                />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="官方红"
+                android:layout_marginTop="@dimen/unit_16px"
+                android:textSize="12sp"
+                android:textColor="@color/text_333"
+                />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:visibility="invisible"
+            android:orientation="vertical">
+            <ImageView
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:background="@color/line"
+                />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="官方白"
+                android:layout_marginTop="@dimen/unit_16px"
+                android:textSize="12sp"
+                android:textColor="@color/text_333"
+                />
+        </LinearLayout>
+    </LinearLayout>
+
+</LinearLayout>

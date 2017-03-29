@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:clipToPadding="true"
+    android:fitsSystemWindows="true"
+    android:background="@color/background"
+    >
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <LinearLayout
+            android:id="@+id/mLayoutAccount"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/mine_top_height"
+            android:paddingTop="@dimen/unit_30px"
+            android:background="@color/theme_color"
+            android:gravity="center"
+            android:orientation="vertical"
+            >
+
+            <ImageView
+                android:id="@+id/mImageHead"
+                android:layout_width="@dimen/mine_header_size"
+                android:layout_height="@dimen/mine_header_size"
+                android:src="@drawable/ic_svg_default_logo"
+                />
+
+            <TextView
+                android:id="@+id/mTextName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/unit_16px"
+                android:textColor="@color/text_999"
+                android:textSize="14sp"
+                android:gravity="center"
+                android:text="点击登录"
+                />
+        </LinearLayout>
+
+        <FrameLayout
+            android:id="@+id/mLayoutSet"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/unit_16px"
+            android:layout_margin="@dimen/unit_16px"
+            android:layout_alignParentRight="true"
+            >
+            <ImageView
+                android:id="@+id/mImageSet"
+                android:layout_width="@dimen/icon_size"
+                android:layout_height="@dimen/icon_size"
+                android:src="@drawable/ic_svg_set"
+                />
+
+        </FrameLayout>
+    </RelativeLayout>
+
+   <View
+       android:layout_width="match_parent"
+       android:layout_height="@dimen/line_height"
+       android:background="@color/line"
+       />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/line_height"
+        android:layout_marginTop="@dimen/unit_16px"
+        android:background="@color/line"
+        />
+
+    <LinearLayout
+        android:id="@+id/mLayoutTheme"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingLeft="@dimen/unit_30px"
+        android:paddingRight="@dimen/unit_30px"
+        android:paddingTop="@dimen/unit_30px"
+        android:paddingBottom="@dimen/unit_30px"
+        android:background="@drawable/drawable_white_click_background"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:id="@+id/mImageTheme"
+            android:layout_width="@dimen/icon_size"
+            android:layout_height="@dimen/icon_size"
+            android:src="@drawable/ic_svg_mine_theme"
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/text_333"
+            android:textSize="14sp"
+            android:layout_marginStart="@dimen/unit_30px"
+            android:text="@string/str_mine_menu_theme"
+            />
+
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/line_height"
+        android:background="@color/line"
+        />
+
+
+</LinearLayout>
