@@ -1,1 +1,1 @@
-include ':app', ':common', ':widget', ':skin.black', ':skin.default', ':skin.red'
+include ':app', ':common', ':widget', ':skin.black', ':skin.default', ':skin.red', ':chatkit'

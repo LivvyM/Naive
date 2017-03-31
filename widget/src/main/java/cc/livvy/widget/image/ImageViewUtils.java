@@ -26,4 +26,11 @@ public class ImageViewUtils {
                 .placeholder(R.drawable.ic_svg_default_logo)
                 .into(view);
     }
+
+    public static void bindImageView(@NonNull ImageView view, String url){
+        Glide.with(BaseApplication.getInstance())
+                .load(url)
+                .centerCrop()
+                .into(view);
+    }
 }

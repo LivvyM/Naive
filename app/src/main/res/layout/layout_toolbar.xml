@@ -6,6 +6,7 @@
     android:paddingRight="@dimen/unit_30px"
     android:id="@+id/mLayoutTitleParent"
     android:background="@color/theme_color"
+    android:translationZ="0.6dp"
     >
 
     <FrameLayout

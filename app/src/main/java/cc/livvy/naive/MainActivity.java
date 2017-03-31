@@ -7,13 +7,15 @@ import android.widget.ImageView;
 import android.widget.TabHost;
 
 import cc.livvy.naive.base.AppBaseActivity;
+import cc.livvy.naive.discover.presentation.fragment.DiscoverFragment;
+import cc.livvy.naive.message.presentation.fragment.MessageFragment;
 import cc.livvy.naive.mine.presentation.fragment.MineFragment;
 
 public class MainActivity extends AppBaseActivity {
 
     protected FragmentTabHost fragmentTabHost;
 
-    private String mTextTitle[] = {"chat","compass","message","user"};
+    private String mTextTitle[] = {"chat","discover","message","user"};
 
     private int mDrawableSelector[] = {
             R.drawable.main_tab_chat_selector,
@@ -22,7 +24,7 @@ public class MainActivity extends AppBaseActivity {
             R.drawable.main_tab_user_selector
     };
 
-    private Class mFragmentArray[] = {TestFragment.class, TestFragment.class, TestFragment.class, MineFragment.class};
+    private Class mFragmentArray[] = {MessageFragment.class, DiscoverFragment.class, TestFragment.class, MineFragment.class};
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

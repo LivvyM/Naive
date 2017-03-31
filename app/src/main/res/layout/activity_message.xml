@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:clipToPadding="true"
+    android:fitsSystemWindows="true"
+    android:background="@color/background">
+
+    <include layout="@layout/layout_toolbar" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <com.stfalcon.chatkit.messages.MessagesList
+            android:id="@+id/messagesList"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_above="@+id/input"
+            app:incomingTextSize="15sp"
+            app:incomingTimeTextSize="12sp"
+            app:outcomingTextSize="15sp"
+            app:outcomingTimeTextSize="12sp"
+            app:outcomingDefaultBubbleColor="@color/message_out_bubble"
+            app:dateHeaderTextSize="12sp"
+            />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/line_height"
+            android:layout_above="@+id/input"
+            android:background="@color/line"/>
+
+        <com.stfalcon.chatkit.messages.MessageMoreInput
+            android:id="@+id/input"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#F8F8F8"
+            android:layout_alignParentBottom="true"
+            app:inputTextSize="16sp"
+            app:inputHint="说些什么.."
+            />
+
+    </RelativeLayout>
+
+</LinearLayout>

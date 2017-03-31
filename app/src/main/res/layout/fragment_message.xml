@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background"
+    >
+
+    <include layout="@layout/layout_toolbar_fragment" />
+
+    <com.stfalcon.chatkit.dialogs.DialogsList
+        android:id="@+id/dialogsList"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:dialogMessageAvatarEnabled="false"
+        app:dialogTitleTextColor="@color/text_333"
+        app:dialogTitleTextSize="16sp"
+        app:dialogDateColor="@color/text_999"
+        app:dialogDateSize="12sp"
+        app:dialogMessageTextColor="@color/text_999"
+        app:dialogMessageTextSize="13sp"
+        app:dialogAvatarWidth="@dimen/chat_list_avatar_size"
+        app:dialogAvatarHeight="@dimen/chat_list_avatar_size"
+        app:dialogDividerLeftPadding="0dp"
+        app:dialogUnreadBubbleBackgroundColor="@color/theme_red"
+        />
+
+</LinearLayout>

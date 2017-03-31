@@ -50,8 +50,8 @@
             >
             <ImageView
                 android:id="@+id/mImageSet"
-                android:layout_width="@dimen/icon_size"
-                android:layout_height="@dimen/icon_size"
+                android:layout_width="@dimen/unit_42px"
+                android:layout_height="@dimen/unit_42px"
                 android:src="@drawable/ic_svg_set"
                 />
 

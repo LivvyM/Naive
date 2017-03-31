@@ -11,4 +11,8 @@
     <style name="white.AppTheme" parent="AppTheme">
     </style>
 
+    <style name="AppTheme.Splash" parent="AppTheme">
+        <item name="android:windowTranslucentStatus">true</item>
+        <item name="android:statusBarColor">@android:color/transparent</item>
+    </style>
 </resources>

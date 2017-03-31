@@ -7,6 +7,7 @@
     <color name="black">#000000</color>
     <color name="black_2c">#FF2C2C2C</color>
     <color name="white">#F8F8F8</color>
+    <color name="white_FF">#FFFFFF</color>
 
     <color name="line">#f1f1f1</color>
 
@@ -15,7 +16,7 @@
     <color name="text_666">#666666</color>
     <color name="text_999">#999999</color>
 
-
+    <color name="message_out_bubble">#6889ff</color>
     <color name="theme_color">#F8F8F8</color>
     <color name="theme_text_color_mine_name">#999999</color>
     <color name="theme_toolbar_title_text_color">#333333</color>

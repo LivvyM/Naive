@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/mLayoutParent"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/white"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:id="@+id/mLayoutFace"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:orientation="vertical">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:paddingTop="10dp"
+            android:paddingBottom="10dp"
+            android:orientation="horizontal">
+
+            <com.stfalcon.chatkit.emoji.widget.EmoticonsEditText
+                android:id="@id/messageInput"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:minHeight="32dp"
+                android:maxLines="5"
+                android:layout_weight="1"
+                android:gravity="center_vertical"
+                android:hint="说点什么吧..."
+                android:layout_marginLeft="8dp"
+                android:layout_marginRight="8dp"
+                android:background="#ffffff"
+                android:paddingLeft="6dp"
+                android:textColorHint="#999999"
+                android:textSize="14dp" />
+            <ImageView
+                android:id="@+id/mImageModel"
+                android:layout_width="34dp"
+                android:layout_height="34dp"
+                android:layout_marginRight="8dp"
+                android:src="@drawable/ic_svg_message_face"
+                />
+
+            <FrameLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingRight="8dp"
+                >
+                <ImageView
+                    android:id="@+id/mImageMore"
+                    android:layout_width="34dp"
+                    android:layout_height="34dp"
+                    android:layout_gravity="center"
+                    android:visibility="visible"
+                    android:src="@drawable/ic_svg_message_more"
+                    />
+                <Button
+                    android:id="@id/messageSendButton"
+                    android:layout_width="40dp"
+                    android:layout_height="34dp"
+                    android:text="发送"
+                    android:layout_gravity="center"
+                    android:visibility="invisible"
+                    android:textSize="12sp"
+                    android:textColor="@color/white"
+                    android:background="@drawable/shape_corner_4_blue"
+                    style="?android:attr/borderlessButtonStyle"
+                    />
+            </FrameLayout>
+        </LinearLayout>
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.6dp"
+        android:background="#D5D5D5"
+        />
+
+    <RelativeLayout
+        android:id="@+id/mLayoutKeyboard"
+        android:layout_width="match_parent"
+        android:background="@color/white"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        >
+        <com.stfalcon.chatkit.emoji.widget.EmoticonsFuncView
+            android:id="@+id/view_epv"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_above="@+id/view_eiv"
+            android:layout_marginTop="4dp"
+            android:layout_marginBottom="4dp"
+            android:orientation="vertical" />
+
+        <com.stfalcon.chatkit.emoji.widget.EmoticonsIndicatorView
+            android:id="@+id/view_eiv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/view_spit"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:paddingBottom="@dimen/indicator_margin" />
+
+        <include
+            android:id="@+id/view_spit"
+            layout="@layout/ic_spitview_horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="0.6dp"
+            android:layout_above="@+id/view_etv" />
+
+        <com.stfalcon.chatkit.emoji.widget.EmoticonsToolBarView
+            android:id="@+id/view_etv"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/bar_height"
+            android:layout_alignParentBottom="true"
+            android:orientation="vertical" />
+
+    </RelativeLayout>
+
+</LinearLayout>
