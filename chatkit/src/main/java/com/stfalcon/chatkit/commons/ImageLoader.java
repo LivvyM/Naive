@@ -22,5 +22,5 @@ import android.widget.ImageView;
  * Callback for implementing images loading in message list
  */
 public interface ImageLoader {
-    void loadImage(ImageView imageView, String url);
+    void loadImage(ImageView imageView, String url,boolean isCircle);
 }

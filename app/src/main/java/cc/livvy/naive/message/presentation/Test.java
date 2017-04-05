@@ -37,7 +37,7 @@ public class Test extends AppBaseActivity{
 
         ImageLoader imageLoader = new ImageLoader() {
             @Override
-            public void loadImage(ImageView imageView, String url) {
+            public void loadImage(ImageView imageView, String url,boolean isCircle) {
                 ImageViewUtils.bindCircleImageView(imageView,url);
             }
         };

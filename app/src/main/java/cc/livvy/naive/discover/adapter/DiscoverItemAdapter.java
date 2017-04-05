@@ -13,6 +13,8 @@ import java.util.List;
 import cc.livvy.naive.R;
 import cc.livvy.naive.discover.models.DiscoverModel;
 import cc.livvy.widget.image.ImageViewUtils;
+import cc.livvy.widget.recyclerview.BaseQuickAdapter;
+import cc.livvy.widget.recyclerview.BaseViewHolder;
 
 /**
  * 发现页面item
@@ -20,32 +22,25 @@ import cc.livvy.widget.image.ImageViewUtils;
  * Created by livvy on 17-3-31.
  */
 
-public class DiscoverItemAdapter extends RecyclerView.Adapter<DiscoverItemAdapter.DiscoverViewHolder>{
+public class DiscoverItemAdapter extends BaseQuickAdapter<DiscoverModel,DiscoverItemAdapter.DiscoverViewHolder>{
 
     private Context context;
-    private List<DiscoverModel> discoverModels;
 
-    public DiscoverItemAdapter(Context context, List<DiscoverModel> list){
-        this.context = context;
-        this.discoverModels = list;
+    public DiscoverItemAdapter(Context context,List<DiscoverModel> discoverModels){
+        super(R.layout.item_discover,discoverModels);
     }
 
     @Override
-    public DiscoverViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        return new DiscoverViewHolder(LayoutInflater.from(context).inflate(R.layout.item_discover, parent, false));
+    protected void convert(DiscoverViewHolder helper, DiscoverModel item) {
+        helper.bind(item);
     }
 
     @Override
-    public void onBindViewHolder(DiscoverViewHolder holder, int position) {
-        holder.bind(discoverModels.get(position));
+    protected DiscoverViewHolder createBaseViewHolder(View view) {
+        return new DiscoverViewHolder(view);
     }
 
-    @Override
-    public int getItemCount() {
-        return discoverModels.size();
-    }
-
-    class DiscoverViewHolder extends RecyclerView.ViewHolder{
+    public class DiscoverViewHolder extends BaseViewHolder {
 
         ImageView mImageAvatar;
         ImageView mImagePicture;

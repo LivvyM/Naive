@@ -16,9 +16,10 @@
     <color name="text_666">#666666</color>
     <color name="text_999">#999999</color>
 
-    <color name="message_out_bubble">#6889ff</color>
+    <color name="message_out_bubble">#03a9f4</color>
     <color name="theme_color">#F8F8F8</color>
     <color name="theme_text_color_mine_name">#999999</color>
     <color name="theme_toolbar_title_text_color">#333333</color>
+    <color name="theme_swipe_refresh_color">#FF2C2C2C</color>
 
 </resources>

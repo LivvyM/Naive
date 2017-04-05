@@ -50,6 +50,11 @@ public final class DialogsListFixtures extends FixturesData {
             public Date getCreatedAt() {
                 return date;
             }
+
+            @Override
+            public int getMessageType() {
+                return MESSAGE_TYPE_TEXT;
+            }
         };
     }
 

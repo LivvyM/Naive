@@ -37,14 +37,21 @@ public final class MessagesListFixtures extends FixturesData {
         private long id;
         private String text;
         private Date createdAt;
+        private int messageType = MESSAGE_TYPE_TEXT;
 
         public Message() {
             this(messages.get(rnd.nextInt(messages.size())));
+
         }
 
         public Message(String text) {
             this.text = text;
             this.id = UUID.randomUUID().getLeastSignificantBits();
+            if(text.contains("http")){
+                messageType = MESSAGE_TYPE_PICTURE;
+            }else{
+                messageType = MESSAGE_TYPE_TEXT;
+            }
         }
 
         @Override
@@ -61,6 +68,11 @@ public final class MessagesListFixtures extends FixturesData {
         public IUser getUser() {
             return new DefaultUser(id % 2 == 0 ? "0" : "1", id % 2 == 0 ? names.get(0) : names.get(1),
                     id % 2 == 0 ? avatars.get(0) : avatars.get(1), true);
+        }
+
+        @Override
+        public int getMessageType() {
+            return messageType;
         }
 
         @Override

@@ -85,8 +85,13 @@ public class MessageActivity extends AppBaseParamActivity implements MessagesLis
     private void initMessagesAdapter() {
         ImageLoader imageLoader = new ImageLoader() {
             @Override
-            public void loadImage(ImageView imageView, String url) {
-                ImageViewUtils.bindCircleImageView(imageView, url);
+            public void loadImage(ImageView imageView, String url,boolean isCircle) {
+                if (isCircle){
+                    ImageViewUtils.bindCircleImageView(imageView, url);
+                }else{
+                    ImageViewUtils.bindMessageImageView(imageView, url);
+                }
+
             }
         };
         adapter = new MessagesListAdapter<>("0", imageLoader);

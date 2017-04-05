@@ -10,4 +10,5 @@
     <color name="theme_color">#FF1A1A1A</color>
     <color name="theme_text_color_mine_name">#FFF8F8F8</color>
     <color name="theme_toolbar_title_text_color">#FFF8F8F8</color>
+    <color name="theme_swipe_refresh_color">#FF2C2C2C</color>
 </resources>

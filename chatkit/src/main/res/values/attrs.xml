@@ -33,6 +33,12 @@
         <attr name="incomingBubblePaddingRight" format="dimension|reference" />
         <attr name="incomingBubblePaddingTop" format="dimension|reference" />
         <attr name="incomingBubblePaddingBottom" format="dimension|reference" />
+
+        <attr name="incomingPictureBubblePaddingLeft" format="dimension|reference" />
+        <attr name="incomingPictureBubblePaddingRight" format="dimension|reference" />
+        <attr name="incomingPictureBubblePaddingTop" format="dimension|reference" />
+        <attr name="incomingPictureBubblePaddingBottom" format="dimension|reference" />
+
         <attr name="incomingTextColor" format="color|reference" />
         <attr name="incomingTextSize" format="dimension|reference" />
         <!--TODO text style-->
@@ -45,10 +51,17 @@
         <attr name="outcomingDefaultBubbleColor" format="color|reference" />
         <attr name="outcomingDefaultBubblePressedColor" format="color|reference" />
         <attr name="outcomingDefaultBubbleSelectedColor" format="color|reference" />
+
         <attr name="outcomingBubblePaddingLeft" format="dimension|reference" />
         <attr name="outcomingBubblePaddingRight" format="dimension|reference" />
         <attr name="outcomingBubblePaddingTop" format="dimension|reference" />
         <attr name="outcomingBubblePaddingBottom" format="dimension|reference" />
+
+        <attr name="outcomingPictureBubblePaddingLeft" format="dimension|reference" />
+        <attr name="outcomingPictureBubblePaddingRight" format="dimension|reference" />
+        <attr name="outcomingPictureBubblePaddingTop" format="dimension|reference" />
+        <attr name="outcomingPictureBubblePaddingBottom" format="dimension|reference" />
+
         <attr name="outcomingTextColor" format="color|reference" />
         <attr name="outcomingTextSize" format="dimension|reference" />
         <!--TODO text style-->

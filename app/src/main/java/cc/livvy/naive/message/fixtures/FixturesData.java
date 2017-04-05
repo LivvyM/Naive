@@ -50,6 +50,9 @@ public class FixturesData {
         {
             add("Hello!");
             add("你总是猜测对方说的某句话的潜在意思是什么？");
+            add("http://img.hb.aicdn.com/b7e146010b9c0f7b27ce5b69ec30eb77bbdab8e6db0a-s1DvPP");
+            add("http://img.hb.aicdn.com/e4569ac5fbc73ed7fe788d615cba6e954a37e82738b6f-Qv4k6h");
+            add("http://img.hb.aicdn.com/814552d415f0569e345303fc81a125404185c9483bc09-a7ZSnx");
             add("和高分、心仪异性沟通不了，却对和自身价值差不多甚至更低一些的人就没问题？");
             add("并且这种感觉让人百爪挠心，纠结无比，此心态会直接影响人的行为模式，致使本来一个简单事情会变复杂或低级失误或是在追女孩的过程中让自己处在被动局面。");
             add("人为什么有时候会有患得患失的感觉？");

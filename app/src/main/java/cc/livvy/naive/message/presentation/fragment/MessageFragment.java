@@ -50,7 +50,7 @@ public class MessageFragment extends AppBaseFragment {
 
         ImageLoader imageLoader = new ImageLoader() {
             @Override
-            public void loadImage(ImageView imageView, String url) {
+            public void loadImage(ImageView imageView, String url,boolean isCircle) {
                 ImageViewUtils.bindCircleImageView(imageView,url);
             }
         };
@@ -71,6 +71,7 @@ public class MessageFragment extends AppBaseFragment {
         });
 
         dialogsListView.setAdapter(dialogsListAdapter);
+
     }
 
     private List<DefaultDialog> getDialogs() {

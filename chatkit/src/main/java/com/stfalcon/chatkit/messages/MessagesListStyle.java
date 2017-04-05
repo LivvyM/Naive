@@ -40,10 +40,17 @@ class MessagesListStyle extends Style {
     private int incomingDefaultBubbleColor;
     private int incomingDefaultBubblePressedColor;
     private int incomingDefaultBubbleSelectedColor;
+
     private int incomingDefaultBubblePaddingLeft;
     private int incomingDefaultBubblePaddingRight;
     private int incomingDefaultBubblePaddingTop;
     private int incomingDefaultBubblePaddingBottom;
+
+    private int incomingPictureDefaultBubblePaddingLeft;
+    private int incomingPictureDefaultBubblePaddingRight;
+    private int incomingPictureDefaultBubblePaddingTop;
+    private int incomingPictureDefaultBubblePaddingBottom;
+
     private int incomingTextColor;
     private int incomingTextSize;
     private int incomingTimeTextColor;
@@ -53,10 +60,17 @@ class MessagesListStyle extends Style {
     private int outcomingDefaultBubbleColor;
     private int outcomingDefaultBubblePressedColor;
     private int outcomingDefaultBubbleSelectedColor;
+
+    private int outcomingPictureDefaultBubblePaddingLeft;
+    private int outcomingPictureDefaultBubblePaddingRight;
+    private int outcomingPictureDefaultBubblePaddingTop;
+    private int outcomingPictureDefaultBubblePaddingBottom;
+
     private int outcomingDefaultBubblePaddingLeft;
     private int outcomingDefaultBubblePaddingRight;
     private int outcomingDefaultBubblePaddingTop;
     private int outcomingDefaultBubblePaddingBottom;
+
     private int outcomingTextColor;
     private int outcomingTextSize;
     private int outcomingTimeTextColor;
@@ -92,6 +106,16 @@ class MessagesListStyle extends Style {
                 context.getResources().getDimensionPixelSize(R.dimen.message_padding_top));
         style.incomingDefaultBubblePaddingBottom = typedArray.getDimensionPixelSize(R.styleable.MessagesList_incomingBubblePaddingBottom,
                 context.getResources().getDimensionPixelSize(R.dimen.message_padding_bottom));
+
+        style.incomingPictureDefaultBubblePaddingLeft = typedArray.getDimensionPixelSize(R.styleable.MessagesList_incomingPictureBubblePaddingLeft,
+                context.getResources().getDimensionPixelSize(R.dimen.message_picture_padding_left));
+        style.incomingPictureDefaultBubblePaddingRight = typedArray.getDimensionPixelSize(R.styleable.MessagesList_incomingPictureBubblePaddingRight,
+                context.getResources().getDimensionPixelSize(R.dimen.message_picture_padding_right));
+        style.incomingPictureDefaultBubblePaddingTop = typedArray.getDimensionPixelSize(R.styleable.MessagesList_incomingPictureBubblePaddingTop,
+                context.getResources().getDimensionPixelSize(R.dimen.message_picture_padding_top));
+        style.incomingPictureDefaultBubblePaddingBottom = typedArray.getDimensionPixelSize(R.styleable.MessagesList_incomingPictureBubblePaddingBottom,
+                context.getResources().getDimensionPixelSize(R.dimen.message_picture_padding_bottom));
+
         style.incomingTextColor = typedArray.getColor(R.styleable.MessagesList_incomingTextColor,
                 ContextCompat.getColor(context, R.color.dark_grey_two));
         style.incomingTextSize = typedArray.getDimensionPixelSize(R.styleable.MessagesList_incomingTextSize,
@@ -117,6 +141,18 @@ class MessagesListStyle extends Style {
                 context.getResources().getDimensionPixelSize(R.dimen.message_padding_top));
         style.outcomingDefaultBubblePaddingBottom = typedArray.getDimensionPixelSize(R.styleable.MessagesList_outcomingBubblePaddingBottom,
                 context.getResources().getDimensionPixelSize(R.dimen.message_padding_bottom));
+
+        style.outcomingPictureDefaultBubblePaddingLeft = typedArray.getDimensionPixelSize(R.styleable.MessagesList_outcomingPictureBubblePaddingLeft,
+                context.getResources().getDimensionPixelSize(R.dimen.message_picture_padding_left));
+        style.outcomingPictureDefaultBubblePaddingRight = typedArray.getDimensionPixelSize(R.styleable.MessagesList_outcomingPictureBubblePaddingRight,
+                context.getResources().getDimensionPixelSize(R.dimen.message_picture_padding_right));
+        style.outcomingPictureDefaultBubblePaddingTop = typedArray.getDimensionPixelSize(R.styleable.MessagesList_outcomingPictureBubblePaddingTop,
+                context.getResources().getDimensionPixelSize(R.dimen.message_picture_padding_top));
+        style.outcomingPictureDefaultBubblePaddingBottom = typedArray.getDimensionPixelSize(R.styleable.MessagesList_outcomingPictureBubblePaddingBottom,
+                context.getResources().getDimensionPixelSize(R.dimen.message_picture_padding_bottom));
+
+
+
         style.outcomingTextColor = typedArray.getColor(R.styleable.MessagesList_outcomingTextColor,
                 ContextCompat.getColor(context, R.color.white));
         style.outcomingTextSize = typedArray.getDimensionPixelSize(R.styleable.MessagesList_outcomingTextSize,
@@ -183,6 +219,22 @@ class MessagesListStyle extends Style {
         return incomingDefaultBubblePaddingBottom;
     }
 
+    int getIncomingPictureDefaultBubblePaddingLeft() {
+        return incomingPictureDefaultBubblePaddingLeft;
+    }
+
+    int getIncomingPictureDefaultBubblePaddingRight() {
+        return incomingPictureDefaultBubblePaddingRight;
+    }
+
+    int getIncomingPictureDefaultBubblePaddingTop() {
+        return incomingPictureDefaultBubblePaddingTop;
+    }
+
+    int getIncomingPictureDefaultBubblePaddingBottom() {
+        return incomingPictureDefaultBubblePaddingBottom;
+    }
+
     int getIncomingTextColor() {
         return incomingTextColor;
     }
@@ -214,6 +266,22 @@ class MessagesListStyle extends Style {
 
     int getOutcomingDefaultBubblePaddingBottom() {
         return outcomingDefaultBubblePaddingBottom;
+    }
+
+    int getOutcomingPictureDefaultBubblePaddingLeft() {
+        return outcomingPictureDefaultBubblePaddingLeft;
+    }
+
+    int getOutcomingPictureDefaultBubblePaddingRight() {
+        return outcomingPictureDefaultBubblePaddingRight;
+    }
+
+    int getOutcomingPictureDefaultBubblePaddingTop() {
+        return outcomingPictureDefaultBubblePaddingTop;
+    }
+
+    int getOutcomingPictureDefaultBubblePaddingBottom() {
+        return outcomingPictureDefaultBubblePaddingBottom;
     }
 
     int getOutcomingTextColor() {

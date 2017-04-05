@@ -3,6 +3,7 @@ package cc.livvy.widget.skin.base;
 import android.content.Context;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.support.v4.widget.SwipeRefreshLayout;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -96,6 +97,10 @@ public class SkinBaseFragment extends Fragment implements IDynamicNewView {
 
     public void addThemeBackground(View view,int color){
         dynamicAddView(view, AttrFactory.SupportAttr.SUPPORT_ATTR_BACKGROUND,color);
+    }
+
+    public void addThemeSwipeRefreshLayoutColor(SwipeRefreshLayout view, int color){
+        dynamicAddView(view, AttrFactory.SupportAttr.SUPPORT_ATTR_SWIPE_REFRESH_LAYOUT_COLOR,color);
     }
 
     public void addThemeTextColor(View view,int color){

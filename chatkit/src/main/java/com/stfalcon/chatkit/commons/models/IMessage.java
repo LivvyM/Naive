@@ -37,6 +37,14 @@ public interface IMessage {
      * */
     String getText();
 
+    int MESSAGE_TYPE_TEXT = 0x09;
+    int MESSAGE_TYPE_PICTURE = 0x08;
+
+    /**
+     * returns message type
+     */
+    int getMessageType();
+
     /**
      * Returns message author. See the {@link IUser} for more details
      *

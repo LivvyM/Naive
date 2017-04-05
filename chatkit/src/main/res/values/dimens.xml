@@ -27,6 +27,12 @@
     <dimen name="message_padding_right">16dp</dimen>
     <dimen name="message_padding_top">16dp</dimen>
     <dimen name="message_padding_bottom">16dp</dimen>
+
+    <dimen name="message_picture_padding_left">6dp</dimen>
+    <dimen name="message_picture_padding_right">6dp</dimen>
+    <dimen name="message_picture_padding_top">6dp</dimen>
+    <dimen name="message_picture_padding_bottom">4dp</dimen>
+
     <dimen name="message_text_size">17sp</dimen>
     <dimen name="message_time_text_size">14sp</dimen>
     <dimen name="message_date_header_text_size">16sp</dimen>

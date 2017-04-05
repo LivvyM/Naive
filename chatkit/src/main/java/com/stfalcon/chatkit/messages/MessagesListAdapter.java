@@ -48,6 +48,8 @@ public class MessagesListAdapter<MESSAGE extends IMessage>
 
     private static final int VIEW_TYPE_INCOMING_MESSAGE = 0x00;
     private static final int VIEW_TYPE_OUTCOMING_MESSAGE = 0x01;
+    private static final int VIEW_TYPE_INCOMING_PICTURE = 0X03;
+    private static final int VIEW_TYPE_OUTCOMING_PICTURE = 0x04;
     private static final int VIEW_TYPE_DATE_HEADER = 0x02;
 
     private HoldersConfig holders;
@@ -95,8 +97,12 @@ public class MessagesListAdapter<MESSAGE extends IMessage>
         switch (viewType) {
             case VIEW_TYPE_INCOMING_MESSAGE:
                 return getHolder(parent, holders.incomingLayout, holders.incomingHolder);
+            case VIEW_TYPE_INCOMING_PICTURE:
+                return getHolder(parent, holders.incomingPictureLayout, holders.incomingPictureHolder);
             case VIEW_TYPE_OUTCOMING_MESSAGE:
                 return getHolder(parent, holders.outcomingLayout, holders.outcomingHolder);
+            case VIEW_TYPE_OUTCOMING_PICTURE:
+                return getHolder(parent, holders.outcomingPictureLayout, holders.outcomingPictureHolder);
             case VIEW_TYPE_DATE_HEADER:
                 return getHolder(parent, holders.dateHeaderLayout, holders.dateHeaderHolder);
         }
@@ -146,9 +152,17 @@ public class MessagesListAdapter<MESSAGE extends IMessage>
         if (wrapper.item instanceof IMessage) {
             IMessage message = (IMessage) wrapper.item;
             if (message.getUser().getId().contentEquals(senderId)) {
-                return VIEW_TYPE_OUTCOMING_MESSAGE;
+                if(message.getMessageType() == IMessage.MESSAGE_TYPE_PICTURE){
+                    return VIEW_TYPE_OUTCOMING_PICTURE;
+                }else{
+                    return VIEW_TYPE_OUTCOMING_MESSAGE;
+                }
             } else {
-                return VIEW_TYPE_INCOMING_MESSAGE;
+                if(message.getMessageType() == IMessage.MESSAGE_TYPE_PICTURE){
+                    return VIEW_TYPE_INCOMING_PICTURE;
+                }else{
+                    return VIEW_TYPE_INCOMING_MESSAGE;
+                }
             }
         } else {
             return VIEW_TYPE_DATE_HEADER;
@@ -612,6 +626,13 @@ public class MessagesListAdapter<MESSAGE extends IMessage>
         private Class<? extends BaseMessageViewHolder<? extends IMessage>> outcomingHolder;
         private int outcomingLayout;
 
+        private Class<? extends BaseMessageViewHolder<? extends IMessage>> incomingPictureHolder;
+        private int incomingPictureLayout;
+
+        private Class<? extends BaseMessageViewHolder<? extends IMessage>> outcomingPictureHolder;
+        private int outcomingPictureLayout;
+
+
         private Class<? extends ViewHolder<Date>> dateHeaderHolder;
         private int dateHeaderLayout;
 
@@ -619,8 +640,14 @@ public class MessagesListAdapter<MESSAGE extends IMessage>
             this.incomingHolder = DefaultIncomingMessageViewHolder.class;
             this.incomingLayout = R.layout.item_incoming_message;
 
+            this.incomingPictureHolder = DefaultIncomingPictureMessageViewHolder.class;
+            this.incomingPictureLayout = R.layout.item_incoming_picture_message;
+
             this.outcomingHolder = DefaultOutcomingMessageViewHolder.class;
             this.outcomingLayout = R.layout.item_outcoming_message;
+
+            this.outcomingPictureHolder = DefaultOutcomingPictureMessageViewHolder.class;
+            this.outcomingPictureLayout = R.layout.item_outcoming_picture_message;
 
             this.dateHeaderHolder = DefaultDateHeaderViewHolder.class;
             this.dateHeaderLayout = R.layout.item_date_header;
@@ -655,6 +682,17 @@ public class MessagesListAdapter<MESSAGE extends IMessage>
             this.incomingLayout = layout;
         }
 
+        public void setIncomingPicture(Class<? extends BaseMessageViewHolder<? extends IMessage>> holder, @LayoutRes int layout) {
+            this.incomingPictureHolder = holder;
+            this.incomingPictureLayout = layout;
+        }
+        public void setIncomingPictureHolder(Class<? extends BaseMessageViewHolder<? extends IMessage>> holder) {
+            this.incomingPictureHolder = holder;
+        }
+        public void setIncomingPictureLayout(@LayoutRes int layout) {
+            this.incomingPictureLayout = layout;
+        }
+
         /**
          * Sets both of custom view holder class and layout resource for incoming message.
          *
@@ -684,6 +722,16 @@ public class MessagesListAdapter<MESSAGE extends IMessage>
             this.outcomingLayout = layout;
         }
 
+        public void setOutcomingPicture(Class<? extends BaseMessageViewHolder<? extends IMessage>> holder, @LayoutRes int layout) {
+            this.outcomingPictureHolder = holder;
+            this.outcomingPictureLayout = layout;
+        }
+        public void setOutcomingPictureHolder(Class<? extends BaseMessageViewHolder<? extends IMessage>> holder) {
+            this.outcomingPictureHolder = holder;
+        }
+        public void setOutcomingPictureLayout(@LayoutRes int layout) {
+            this.outcomingPictureLayout = layout;
+        }
         /*
          * Sets both of custom view holder class and layout resource for date header.
          *
@@ -765,6 +813,8 @@ public class MessagesListAdapter<MESSAGE extends IMessage>
     public static class IncomingMessageViewHolder<MESSAGE extends IMessage>
             extends BaseMessageViewHolder<MESSAGE> implements DefaultMessageViewHolder {
 
+        private boolean isCircleAvatar = true;
+
         protected ViewGroup bubble;
         protected TextView text;
         protected TextView time;
@@ -793,7 +843,7 @@ public class MessagesListAdapter<MESSAGE extends IMessage>
             boolean isAvatarExists = imageLoader != null && message.getUser().getAvatar() != null && !message.getUser().getAvatar().isEmpty();
             userAvatar.setVisibility(isAvatarExists ? View.VISIBLE : View.GONE);
             if (isAvatarExists) {
-                imageLoader.loadImage(userAvatar, message.getUser().getAvatar());
+                imageLoader.loadImage(userAvatar, message.getUser().getAvatar(),isCircleAvatar);
             }
         }
 
@@ -823,11 +873,69 @@ public class MessagesListAdapter<MESSAGE extends IMessage>
         }
     }
 
+    public static class IncomingPictureMessageViewHolder <MESSAGE extends IMessage>
+            extends BaseMessageViewHolder<MESSAGE> implements DefaultMessageViewHolder {
+        private boolean isCircleAvatar = true;
+
+        protected ViewGroup bubble;
+        protected ImageView text;
+        protected TextView time;
+        protected ImageView userAvatar;
+
+        public IncomingPictureMessageViewHolder(View itemView) {
+            super(itemView);
+            bubble = (ViewGroup) itemView.findViewById(R.id.bubble);
+            text = (ImageView) itemView.findViewById(R.id.messagePicture);
+            time = (TextView) itemView.findViewById(R.id.messageTime);
+            userAvatar = (ImageView) itemView.findViewById(R.id.messageUserAvatar);
+        }
+
+        @Override
+        public void onBind(MESSAGE message) {
+            bubble.setSelected(isSelected());
+
+            time.setText(DateFormatter.format(message.getCreatedAt(), DateFormatter.Template.TIME));
+
+            boolean isAvatarExists = imageLoader != null && message.getUser().getAvatar() != null && !message.getUser().getAvatar().isEmpty();
+            userAvatar.setVisibility(isAvatarExists ? View.VISIBLE : View.GONE);
+            if (isAvatarExists) {
+                imageLoader.loadImage(userAvatar, message.getUser().getAvatar(),isCircleAvatar);
+                imageLoader.loadImage(text,message.getText(),false);
+            }
+        }
+
+        @Override
+        public void applyStyle(MessagesListStyle style) {
+            bubble.setPadding(style.getIncomingPictureDefaultBubblePaddingLeft(),
+                    style.getIncomingPictureDefaultBubblePaddingTop(),
+                    style.getIncomingPictureDefaultBubblePaddingRight(),
+                    style.getIncomingPictureDefaultBubblePaddingBottom());
+            bubble.setBackground(style.getIncomingBubbleDrawable());
+
+//            text.setTextColor(style.getIncomingTextColor());
+//            text.setTextSize(TypedValue.COMPLEX_UNIT_PX, style.getIncomingTextSize());
+
+            userAvatar.getLayoutParams().width = style.getIncomingAvatarWidth();
+            userAvatar.getLayoutParams().height = style.getIncomingAvatarHeight();
+
+            time.setTextColor(style.getIncomingTimeTextColor());
+            time.setTextSize(TypedValue.COMPLEX_UNIT_PX, style.getIncomingTimeTextSize());
+        }
+    }
+
+    private static class DefaultIncomingPictureMessageViewHolder extends IncomingPictureMessageViewHolder<IMessage> {
+
+        public DefaultIncomingPictureMessageViewHolder(View itemView) {
+            super(itemView);
+        }
+    }
+
     /**
      * Default view holder implementation for outcoming message
      */
     public static class OutcomingMessageViewHolder<MESSAGE extends IMessage>
             extends BaseMessageViewHolder<MESSAGE> implements DefaultMessageViewHolder {
+        private boolean isCircleAvatar = true;
 
         protected ViewGroup bubble;
         protected TextView text;
@@ -857,7 +965,7 @@ public class MessagesListAdapter<MESSAGE extends IMessage>
                 boolean isAvatarExists = message.getUser().getAvatar() != null && !message.getUser().getAvatar().isEmpty();
                 userAvatar.setVisibility(isAvatarExists ? View.VISIBLE : View.GONE);
                 if (isAvatarExists && imageLoader != null) {
-                    imageLoader.loadImage(userAvatar, message.getUser().getAvatar());
+                    imageLoader.loadImage(userAvatar, message.getUser().getAvatar(),isCircleAvatar);
                 }
             }
         }
@@ -881,6 +989,66 @@ public class MessagesListAdapter<MESSAGE extends IMessage>
     private static class DefaultOutcomingMessageViewHolder extends OutcomingMessageViewHolder<IMessage> {
 
         public DefaultOutcomingMessageViewHolder(View itemView) {
+            super(itemView);
+        }
+    }
+
+    /**
+     * Default view holder implementation for outcoming message
+     */
+    public static class OutcomingPictureMessageViewHolder<MESSAGE extends IMessage>
+            extends BaseMessageViewHolder<MESSAGE> implements DefaultMessageViewHolder {
+        private boolean isCircleAvatar = true;
+
+        protected ViewGroup bubble;
+        protected ImageView text;
+        protected TextView time;
+        protected ImageView userAvatar;
+
+        public OutcomingPictureMessageViewHolder(View itemView) {
+            super(itemView);
+            bubble = (ViewGroup) itemView.findViewById(R.id.bubble);
+            text = (ImageView) itemView.findViewById(R.id.messagePicture);
+            time = (TextView) itemView.findViewById(R.id.messageTime);
+            userAvatar = (ImageView) itemView.findViewById(R.id.messageUserAvatar);
+        }
+
+        @Override
+        public void onBind(MESSAGE message) {
+            bubble.setSelected(isSelected());
+            time.setText(DateFormatter.format(message.getCreatedAt(), DateFormatter.Template.TIME));
+
+            if (userAvatar != null) {
+                boolean isAvatarExists = message.getUser().getAvatar() != null && !message.getUser().getAvatar().isEmpty();
+                userAvatar.setVisibility(isAvatarExists ? View.VISIBLE : View.GONE);
+                if (isAvatarExists && imageLoader != null) {
+                    imageLoader.loadImage(userAvatar, message.getUser().getAvatar(),isCircleAvatar);
+                }
+            }
+            if (imageLoader != null) {
+                imageLoader.loadImage(text,message.getText(),false);
+            }
+        }
+
+        @Override
+        public void applyStyle(MessagesListStyle style) {
+            bubble.setPadding(style.getOutcomingPictureDefaultBubblePaddingLeft(),
+                    style.getOutcomingPictureDefaultBubblePaddingTop(),
+                    style.getOutcomingPictureDefaultBubblePaddingRight(),
+                    style.getOutcomingPictureDefaultBubblePaddingBottom());
+            bubble.setBackground(style.getOutcomingBubbleDrawable());
+
+//            text.setTextColor(style.getOutcomingTextColor());
+//            text.setTextSize(TypedValue.COMPLEX_UNIT_PX, style.getOutcomingTextSize());
+
+            time.setTextColor(style.getOutcomingTimeTextColor());
+            time.setTextSize(TypedValue.COMPLEX_UNIT_PX, style.getOutcomingTimeTextSize());
+        }
+    }
+
+    private static class DefaultOutcomingPictureMessageViewHolder extends OutcomingPictureMessageViewHolder<IMessage> {
+
+        public DefaultOutcomingPictureMessageViewHolder(View itemView) {
             super(itemView);
         }
     }

@@ -4,6 +4,7 @@ import java.util.HashMap;
 
 import cc.livvy.widget.skin.attr.BackgroundAttr;
 import cc.livvy.widget.skin.attr.ImageResourceAttr;
+import cc.livvy.widget.skin.attr.SwipeRefreshLayoutAttr;
 import cc.livvy.widget.skin.attr.TextColorAttr;
 import cc.livvy.widget.skin.utils.SkinL;
 
@@ -21,6 +22,7 @@ public class AttrFactory {
         public final static String SUPPORT_ATTR_BACKGROUND = "background";
         public final static String SUPPORT_ATTR_TEXT_COLOR = "textColor";
         public final static String SUPPORT_ATTR_IMAGE_RESOURCE = "imageResource";
+        public final static String SUPPORT_ATTR_SWIPE_REFRESH_LAYOUT_COLOR= "SwipeRefreshLayoutAttr";
     }
 
     public static HashMap<String, SkinAttr> mSupportAttr = new HashMap<>();
@@ -29,6 +31,7 @@ public class AttrFactory {
         mSupportAttr.put(SupportAttr.SUPPORT_ATTR_BACKGROUND, new BackgroundAttr());
         mSupportAttr.put(SupportAttr.SUPPORT_ATTR_TEXT_COLOR, new TextColorAttr());
         mSupportAttr.put(SupportAttr.SUPPORT_ATTR_IMAGE_RESOURCE,new ImageResourceAttr());
+        mSupportAttr.put(SupportAttr.SUPPORT_ATTR_SWIPE_REFRESH_LAYOUT_COLOR,new SwipeRefreshLayoutAttr());
     }
 
 

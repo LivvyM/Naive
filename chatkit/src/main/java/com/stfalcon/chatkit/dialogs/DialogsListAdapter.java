@@ -56,6 +56,7 @@ public class DialogsListAdapter<DIALOG extends IDialog>
     private OnDialogLongClickListener<DIALOG> onLongItemClickListener;
     private DialogListStyle dialogStyle;
 
+
     /**
      * For default list item layout and view holder
      *
@@ -340,6 +341,9 @@ public class DialogsListAdapter<DIALOG extends IDialog>
     }
 
     public static class DialogViewHolder<DIALOG extends IDialog> extends BaseDialogViewHolder<DIALOG> {
+
+        private boolean isCircleAvatar = true;
+
         protected DialogListStyle dialogStyle;
         protected ViewGroup container;
         protected ViewGroup root;
@@ -442,12 +446,12 @@ public class DialogsListAdapter<DIALOG extends IDialog>
 
             //Set Dialog avatar
             if (imageLoader != null) {
-                imageLoader.loadImage(ivAvatar, dialog.getDialogPhoto());
+                imageLoader.loadImage(ivAvatar, dialog.getDialogPhoto(),isCircleAvatar);
             }
 
             //Set Last message user avatar
             if (imageLoader != null) {
-                imageLoader.loadImage(ivLastMessageUser, dialog.getLastMessage().getUser().getAvatar());
+                imageLoader.loadImage(ivLastMessageUser, dialog.getLastMessage().getUser().getAvatar(),isCircleAvatar);
             }
             ivLastMessageUser.setVisibility(dialogStyle.isDialogMessageAvatarEnabled()
                     && dialog.getUsers().size() > 1 ? VISIBLE : GONE);
