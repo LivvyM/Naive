@@ -17,6 +17,7 @@ import com.stfalcon.chatkit.messages.MessagesList;
 import com.stfalcon.chatkit.messages.MessagesListAdapter;
 
 import java.util.ArrayList;
+import java.util.List;
 
 import cc.livvy.naive.R;
 import cc.livvy.naive.base.AppBaseParamActivity;
@@ -35,6 +36,11 @@ public class MessageActivity extends AppBaseParamActivity implements MessagesLis
     private MessagesListAdapter<MessagesListFixtures.Message> adapter;
     private MessageMoreInput input;
     private int selectionCount;
+    private List<MessageMoreInput.MenuEntity> menuEntities = new ArrayList<>();
+
+    {
+        menuEntities.add(new MessageMoreInput.MenuEntity("相册",R.drawable.ic_svg_photo));
+    }
 
     private String title;
 
@@ -80,6 +86,21 @@ public class MessageActivity extends AppBaseParamActivity implements MessagesLis
         });
 
         initMessagesAdapter();
+        input.setMenuData(menuEntities, new MessageMoreInput.OnMenuItemClickListener() {
+            @Override
+            public void onClick(int position) {
+                switch (position){
+                    case 0:
+                        /**
+                         * 相册
+                         */
+                        break;
+                    default:
+                        break;
+                }
+            }
+        });
+
     }
 
     private void initMessagesAdapter() {
