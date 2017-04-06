@@ -47,6 +47,7 @@ public class MessageMoreInput extends RelativeLayout
     protected EmoticonsToolBarView mEmoticonsToolBarView;
     protected LinearLayout mLayoutFace;
     protected RelativeLayout mLayoutKeyboard;
+    protected LinearLayout mLayoutMore;
     protected ImageView mImageModel;
     protected LinearLayout mLayoutParent;
     protected ImageView mImageMore;
@@ -59,7 +60,8 @@ public class MessageMoreInput extends RelativeLayout
     private CharSequence input;
     private MessageInput.InputListener inputListener;
 
-    private boolean isShowEmoji = true; //判断是否显示表情
+    private boolean ShowEmoji = true; //判断是否显示表情
+    private boolean isShowMoreMenu = false;//判断是否显示menu
 
     public MessageMoreInput(Context context) {
         super(context);
@@ -189,6 +191,7 @@ public class MessageMoreInput extends RelativeLayout
         mEmoticonsToolBarView = (EmoticonsToolBarView) findViewById(R.id.view_etv);
         mLayoutFace = (LinearLayout)findViewById(R.id.mLayoutFace);
         mLayoutKeyboard = (RelativeLayout)findViewById(R.id.mLayoutKeyboard);
+        mLayoutMore = (LinearLayout) findViewById(R.id.mLayoutMore);
         mImageModel = (ImageView) findViewById(R.id.mImageModel);
         mImageMore = (ImageView)findViewById(R.id.mImageMore);
         mLayoutParent = (LinearLayout) findViewById(R.id.mLayoutParent);
@@ -202,6 +205,11 @@ public class MessageMoreInput extends RelativeLayout
                 ,EmoticonsKeyboardUtils.getDefKeyboardHeight(getContext()) - EmoticonsKeyboardUtils.dip2px(getContext(),54)));
         mLayoutKeyboard.setVisibility(View.GONE);
 
+        mLayoutMore.setLayoutParams(new LinearLayout.LayoutParams(
+                EmoticonsKeyboardUtils.getDisplayWidthPixels(getContext())
+                ,EmoticonsKeyboardUtils.getDefKeyboardHeight(getContext()) - EmoticonsKeyboardUtils.dip2px(getContext(),54)));
+        mLayoutMore.setVisibility(GONE);
+
         messageInput.setFocusable(true);
         messageInput.setFocusableInTouchMode(true);
         messageInput.setText("");
@@ -211,22 +219,20 @@ public class MessageMoreInput extends RelativeLayout
         mImageModel.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
-                if(isShowEmoji){
+                if(ShowEmoji){
                     EmoticonsKeyboardUtils.closeSoftKeyboard(messageInput);
                     mImageModel.setImageResource(R.drawable.ic_svg_message_broad);
-                    isShowEmoji = false;
+                    ShowEmoji = false;
                     new Handler().postDelayed(new Runnable() {
                         @Override
                         public void run() {
                             mLayoutParent.startAnimation(enterAnimation);
+                            mLayoutMore.setVisibility(View.GONE);
                             mLayoutKeyboard.setVisibility(View.VISIBLE);
                         }
                     },100);
-
-
                 }else{
-                    isShowEmoji = true;
+                    ShowEmoji = true;
                     mLayoutKeyboard.setVisibility(View.GONE);
                     mImageModel.setImageResource(R.drawable.ic_svg_message_face);
                     new Handler().postDelayed(new Runnable() {
@@ -239,14 +245,50 @@ public class MessageMoreInput extends RelativeLayout
             }
         });
 
+        mImageMore.setOnClickListener(new OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if(isShowMoreMenu){
+                    isShowMoreMenu = false;
+
+                    mLayoutMore.setVisibility(View.GONE);
+                    new Handler().postDelayed(new Runnable() {
+                        @Override
+                        public void run() {
+                            EmoticonsKeyboardUtils.openSoftKeyboard(messageInput);
+                        }
+                    },100);
+                }else{
+                    isShowMoreMenu = true;
+                    if(ShowEmoji){
+                        mLayoutMore.setVisibility(VISIBLE);
+                        mLayoutKeyboard.setVisibility(View.GONE);
+                    }else{
+                        EmoticonsKeyboardUtils.closeSoftKeyboard(messageInput);
+                        new Handler().postDelayed(new Runnable() {
+                            @Override
+                            public void run() {
+                                mLayoutParent.startAnimation(enterAnimation);
+                                mLayoutKeyboard.setVisibility(View.GONE);
+                                mLayoutMore.setVisibility(View.VISIBLE);
+                            }
+                        },100);
+                    }
+                }
+
+            }
+        });
+
         messageInput.setOnTouchListener(new View.OnTouchListener() {
             @Override
             public boolean onTouch(View v, MotionEvent event) {
-                if(!isShowEmoji){
-                    isShowEmoji = true;
+                if(!ShowEmoji){
+                    ShowEmoji = true;
+                    isShowMoreMenu = false;
                     EmoticonsKeyboardUtils.openSoftKeyboard(messageInput);
                     mImageModel.setImageResource(R.drawable.ic_svg_message_face);
                     mLayoutKeyboard.setVisibility(View.GONE);
+                    mLayoutMore.setVisibility(View.GONE);
                 }
                 return false;
             }
@@ -316,8 +358,8 @@ public class MessageMoreInput extends RelativeLayout
     }
 
     public boolean isBack(){
-        if(!isShowEmoji){
-            isShowEmoji = true;
+        if(!ShowEmoji){
+            ShowEmoji = true;
             mImageModel.setImageResource(R.drawable.ic_svg_message_face);
             mLayoutKeyboard.setVisibility(View.GONE);
             return false;
@@ -327,11 +369,11 @@ public class MessageMoreInput extends RelativeLayout
     }
 
     public void closeMore(){
-        if(isShowEmoji){
-            isShowEmoji = false;
+        if(ShowEmoji){
+            ShowEmoji = false;
             EmoticonsKeyboardUtils.closeSoftKeyboard(messageInput);
         }else{
-            isShowEmoji = true;
+            ShowEmoji = true;
             mImageModel.setImageResource(R.drawable.ic_svg_message_face);
             mLayoutKeyboard.setVisibility(View.GONE);
         }
