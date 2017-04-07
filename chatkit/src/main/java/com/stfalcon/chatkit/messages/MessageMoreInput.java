@@ -432,7 +432,7 @@ public class MessageMoreInput extends RelativeLayout
         mRecyclerMenu.setLayoutManager(new GridLayoutManager(getContext(),4));
         mMenuAdapter = new MenuAdapter();
         mRecyclerMenu.setAdapter(mMenuAdapter);
-        mRecyclerMenu.addItemDecoration(new SpaceItemDecoration(16));
+        mRecyclerMenu.addItemDecoration(new SpaceItemDecoration(30));
     }
 
     public void setMenuData(List<MenuEntity> data,OnMenuItemClickListener listener){

@@ -3,6 +3,12 @@
     package="cc.livvy.naive">
 
     <uses-permission android:name="android.permission.INTERNET" />
+    <!--声明使用相机-->
+    <uses-feature android:name="android.hardware.camera" android:required="true"/>
+
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+
 
     <application
         android:name=".Application"
@@ -39,6 +45,17 @@
             android:windowSoftInputMode="stateHidden|stateUnchanged" />
 
         <activity android:name=".message.presentation.Test" />
+
+        <activity android:name="cn.finalteam.rxgalleryfinal.ui.activity.MediaActivity"
+            android:screenOrientation="portrait"
+            android:exported="true"
+            />
+
+        <activity
+            android:name="com.yalantis.ucrop.UCropActivity"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.NoTitleBar.Fullscreen"
+            />
     </application>
 
 </manifest>

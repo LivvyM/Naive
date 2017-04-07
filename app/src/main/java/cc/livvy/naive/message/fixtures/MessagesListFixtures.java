@@ -54,6 +54,16 @@ public final class MessagesListFixtures extends FixturesData {
             }
         }
 
+        public Message(String text,boolean isPicture) {
+            this.text = text;
+            this.id = UUID.randomUUID().getLeastSignificantBits();
+            if(isPicture){
+                messageType = MESSAGE_TYPE_PICTURE;
+            }else{
+                messageType = MESSAGE_TYPE_TEXT;
+            }
+        }
+
         @Override
         public Date getCreatedAt() {
             return createdAt == null ? new Date() : createdAt;

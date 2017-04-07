@@ -5,10 +5,12 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.KeyEvent;
 import android.view.MotionEvent;
 import android.view.View;
 import android.widget.ImageView;
+import android.widget.Toast;
 
 import com.stfalcon.chatkit.commons.ImageLoader;
 import com.stfalcon.chatkit.messages.MessageInput;
@@ -23,6 +25,11 @@ import cc.livvy.naive.R;
 import cc.livvy.naive.base.AppBaseParamActivity;
 import cc.livvy.naive.message.fixtures.MessagesListFixtures;
 import cc.livvy.widget.image.ImageViewUtils;
+import cn.finalteam.rxgalleryfinal.RxGalleryFinal;
+import cn.finalteam.rxgalleryfinal.bean.MediaBean;
+import cn.finalteam.rxgalleryfinal.imageloader.ImageLoaderType;
+import cn.finalteam.rxgalleryfinal.rxbus.RxBusResultSubscriber;
+import cn.finalteam.rxgalleryfinal.rxbus.event.ImageMultipleResultEvent;
 
 /**
  * 聊天页面
@@ -40,6 +47,9 @@ public class MessageActivity extends AppBaseParamActivity implements MessagesLis
 
     {
         menuEntities.add(new MessageMoreInput.MenuEntity("相册",R.drawable.ic_svg_photo));
+        menuEntities.add(new MessageMoreInput.MenuEntity("拍照",R.drawable.ic_svg_camera));
+        menuEntities.add(new MessageMoreInput.MenuEntity("定位",R.drawable.ic_svg_location));
+        menuEntities.add(new MessageMoreInput.MenuEntity("名片",R.drawable.ic_svg_person));
     }
 
     private String title;
@@ -94,13 +104,19 @@ public class MessageActivity extends AppBaseParamActivity implements MessagesLis
                         /**
                          * 相册
                          */
+                        openGallery();
+                        break;
+                    case 1:
+                        break;
+                    case 2:
+                        break;
+                    case 3:
                         break;
                     default:
                         break;
                 }
             }
         });
-
     }
 
     private void initMessagesAdapter() {
@@ -163,5 +179,25 @@ public class MessageActivity extends AppBaseParamActivity implements MessagesLis
                 adapter.addToEnd(messages, true);
             }
         }, 1000);
+    }
+
+    private void openGallery(){
+        RxGalleryFinal
+                .with(MessageActivity.this)
+                .image()
+                .multiple()
+                .maxSize(4)
+                .imageLoader(ImageLoaderType.GLIDE)
+                .subscribe(new RxBusResultSubscriber<ImageMultipleResultEvent>() {
+                    @Override
+                    protected void onEvent(ImageMultipleResultEvent imageMultipleResultEvent) throws Exception {
+                        for (MediaBean mediaBean : imageMultipleResultEvent.getResult()){
+                            String bitmapPath = mediaBean.getThumbnailBigPath();
+                            Log.e("====","bitmapPath" + bitmapPath);
+                            adapter.addToStart(new MessagesListFixtures.Message(bitmapPath,true), true);
+                        }
+                    }
+                })
+                .openGallery();
     }
 }
