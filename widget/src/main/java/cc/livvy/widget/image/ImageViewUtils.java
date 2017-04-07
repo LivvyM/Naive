@@ -44,10 +44,13 @@ public class ImageViewUtils {
     }
 
     public static void bindMessageImageView(final @NonNull ImageView view, String url){
+        if (!url.contains("http://") && !url.contains("https://")) {
+            url = "file://" + url;
+        }
         Glide.with(BaseApplication.getInstance())
                 .load(url)
                 .centerCrop()
-                .bitmapTransform(new RoundedCornersTransformation(BaseApplication.getInstance(),25,0))
+//                .bitmapTransform(new RoundedCornersTransformation(BaseApplication.getInstance(),25,0))
                 .into(new SimpleTarget<GlideDrawable>() {
                     @Override
                     public void onResourceReady(GlideDrawable resource, GlideAnimation<? super GlideDrawable> glideAnimation) {
@@ -61,19 +64,19 @@ public class ImageViewUtils {
         int width = resource.getIntrinsicWidth();
         int height = resource.getIntrinsicHeight();
         int maxSize = getScreenWidth(context) / 2;
-        double scale = (double) width / height;
-        if(scale >= 1){
+        if(width >= height){
             /**
              * 宽图片
              */
+            height = (int)(maxSize * ((double) height / width));
             width = maxSize;
-            height = (int)(maxSize * scale);
         }else{
             /**
              * 长图片
              */
-            width = (int)(maxSize * scale);
+            width = (int)(maxSize * ((double) width / height));
             height = maxSize;
+
         }
 
         return new FlexboxLayout.LayoutParams(width,height);

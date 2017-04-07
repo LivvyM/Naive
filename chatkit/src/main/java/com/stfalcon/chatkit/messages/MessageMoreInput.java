@@ -1,18 +1,25 @@
 package com.stfalcon.chatkit.messages;
 
 import android.content.Context;
+import android.content.pm.ProviderInfo;
+import android.graphics.Rect;
 import android.graphics.drawable.Drawable;
 import android.os.Handler;
+import android.support.v7.widget.GridLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.util.AttributeSet;
 import android.util.TypedValue;
+import android.view.LayoutInflater;
 import android.view.MotionEvent;
 import android.view.View;
+import android.view.ViewGroup;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
@@ -28,9 +35,11 @@ import com.stfalcon.chatkit.emoji.widget.EmoticonsEditText;
 import com.stfalcon.chatkit.emoji.widget.EmoticonsFuncView;
 import com.stfalcon.chatkit.emoji.widget.EmoticonsIndicatorView;
 import com.stfalcon.chatkit.emoji.widget.EmoticonsToolBarView;
+import com.stfalcon.chatkit.utils.DeviceUtil;
 
 import java.lang.reflect.Field;
 import java.util.ArrayList;
+import java.util.List;
 
 /**
  * 表情和更多功能
@@ -50,7 +59,10 @@ public class MessageMoreInput extends RelativeLayout
     protected LinearLayout mLayoutMore;
     protected ImageView mImageModel;
     protected LinearLayout mLayoutParent;
+    protected FrameLayout mLayoutMenuParent;
     protected ImageView mImageMore;
+    protected RecyclerView mRecyclerMenu;
+    protected MenuAdapter mMenuAdapter;
 
     protected EmoticonsEditText messageInput;
     protected Button messageSendButton;
@@ -60,8 +72,7 @@ public class MessageMoreInput extends RelativeLayout
     private CharSequence input;
     private MessageInput.InputListener inputListener;
 
-    private boolean ShowEmoji = true; //判断是否显示表情
-    private boolean isShowMoreMenu = false;//判断是否显示menu
+    private boolean isShowMoreMenu = false; //判断是否显示表情
 
     public MessageMoreInput(Context context) {
         super(context);
@@ -160,23 +171,6 @@ public class MessageMoreInput extends RelativeLayout
         this.messageInput.setBackground(style.getInputBackground());
         setCursor(style.getInputCursorDrawable());
 
-//        this.messageSendButton.setBackground(style.getInputButtonBackground());
-//        this.messageSendButton.setImageDrawable(style.getInputButtonIcon());
-//        this.messageSendButton.getLayoutParams().width = style.getInputButtonWidth();
-//        this.messageSendButton.getLayoutParams().height = style.getInputButtonHeight();
-//        this.buttonSpace.getLayoutParams().width = style.getInputButtonMargin();
-
-//        if (getPaddingLeft() == 0
-//                && getPaddingRight() == 0
-//                && getPaddingTop() == 0
-//                && getPaddingBottom() == 0) {
-//            setPadding(
-//                    style.getInputDefaultPaddingLeft(),
-//                    style.getInputDefaultPaddingTop(),
-//                    style.getInputDefaultPaddingRight(),
-//                    style.getInputDefaultPaddingBottom()
-//            );
-//        }
     }
 
     private void init(Context context) {
@@ -184,7 +178,6 @@ public class MessageMoreInput extends RelativeLayout
 
         messageInput = (EmoticonsEditText) findViewById(R.id.messageInput);
         messageSendButton = (Button) findViewById(R.id.messageSendButton);
-//        buttonSpace = (Space) findViewById(R.id.buttonSpace);
 
         mEmoticonsFuncView = ((EmoticonsFuncView) findViewById(R.id.view_epv));
         mEmoticonsIndicatorView = (EmoticonsIndicatorView) findViewById(R.id.view_eiv);
@@ -195,20 +188,18 @@ public class MessageMoreInput extends RelativeLayout
         mImageModel = (ImageView) findViewById(R.id.mImageModel);
         mImageMore = (ImageView)findViewById(R.id.mImageMore);
         mLayoutParent = (LinearLayout) findViewById(R.id.mLayoutParent);
+        mLayoutMenuParent = (FrameLayout) findViewById(R.id.mLayoutMenuParent);
+        mRecyclerMenu = (RecyclerView) findViewById(R.id.mRecyclerMenu);
 
         enterAnimation = AnimationUtils.loadAnimation(getContext(),R.anim.pop_enter_anim);
 
         messageSendButton.setOnClickListener(this);
         messageInput.addTextChangedListener(this);
-        mLayoutKeyboard.setLayoutParams(new LinearLayout.LayoutParams(
-                EmoticonsKeyboardUtils.getDisplayWidthPixels(getContext())
-                ,EmoticonsKeyboardUtils.getDefKeyboardHeight(getContext()) - EmoticonsKeyboardUtils.dip2px(getContext(),54)));
-        mLayoutKeyboard.setVisibility(View.GONE);
 
-        mLayoutMore.setLayoutParams(new LinearLayout.LayoutParams(
+        mLayoutMenuParent.setLayoutParams(new LinearLayout.LayoutParams(
                 EmoticonsKeyboardUtils.getDisplayWidthPixels(getContext())
                 ,EmoticonsKeyboardUtils.getDefKeyboardHeight(getContext()) - EmoticonsKeyboardUtils.dip2px(getContext(),54)));
-        mLayoutMore.setVisibility(GONE);
+        mLayoutMenuParent.setVisibility(GONE);
 
         messageInput.setFocusable(true);
         messageInput.setFocusableInTouchMode(true);
@@ -219,28 +210,14 @@ public class MessageMoreInput extends RelativeLayout
         mImageModel.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(ShowEmoji){
-                    EmoticonsKeyboardUtils.closeSoftKeyboard(messageInput);
-                    mImageModel.setImageResource(R.drawable.ic_svg_message_broad);
-                    ShowEmoji = false;
-                    new Handler().postDelayed(new Runnable() {
-                        @Override
-                        public void run() {
-                            mLayoutParent.startAnimation(enterAnimation);
-                            mLayoutMore.setVisibility(View.GONE);
-                            mLayoutKeyboard.setVisibility(View.VISIBLE);
-                        }
-                    },100);
+
+                if(isShowMoreMenu && mLayoutMore.getVisibility() != VISIBLE){
+                    isShowMoreMenu = false;
+                    dismissFaceView();
+
                 }else{
-                    ShowEmoji = true;
-                    mLayoutKeyboard.setVisibility(View.GONE);
-                    mImageModel.setImageResource(R.drawable.ic_svg_message_face);
-                    new Handler().postDelayed(new Runnable() {
-                        @Override
-                        public void run() {
-                            EmoticonsKeyboardUtils.openSoftKeyboard(messageInput);
-                        }
-                    },100);
+                    isShowMoreMenu = true;
+                    showFaceView();
                 }
             }
         });
@@ -248,47 +225,23 @@ public class MessageMoreInput extends RelativeLayout
         mImageMore.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(isShowMoreMenu){
+                if(isShowMoreMenu && mLayoutKeyboard.getVisibility() != VISIBLE){
                     isShowMoreMenu = false;
+                    dismissMoreMenuView();
 
-                    mLayoutMore.setVisibility(View.GONE);
-                    new Handler().postDelayed(new Runnable() {
-                        @Override
-                        public void run() {
-                            EmoticonsKeyboardUtils.openSoftKeyboard(messageInput);
-                        }
-                    },100);
                 }else{
                     isShowMoreMenu = true;
-                    if(ShowEmoji){
-                        mLayoutMore.setVisibility(VISIBLE);
-                        mLayoutKeyboard.setVisibility(View.GONE);
-                    }else{
-                        EmoticonsKeyboardUtils.closeSoftKeyboard(messageInput);
-                        new Handler().postDelayed(new Runnable() {
-                            @Override
-                            public void run() {
-                                mLayoutParent.startAnimation(enterAnimation);
-                                mLayoutKeyboard.setVisibility(View.GONE);
-                                mLayoutMore.setVisibility(View.VISIBLE);
-                            }
-                        },100);
-                    }
+                    showMoreMenuView();
                 }
-
             }
         });
 
         messageInput.setOnTouchListener(new View.OnTouchListener() {
             @Override
             public boolean onTouch(View v, MotionEvent event) {
-                if(!ShowEmoji){
-                    ShowEmoji = true;
+                if(isShowMoreMenu){
                     isShowMoreMenu = false;
-                    EmoticonsKeyboardUtils.openSoftKeyboard(messageInput);
-                    mImageModel.setImageResource(R.drawable.ic_svg_message_face);
-                    mLayoutKeyboard.setVisibility(View.GONE);
-                    mLayoutMore.setVisibility(View.GONE);
+                    dismissMoreMenuView();
                 }
                 return false;
             }
@@ -320,6 +273,67 @@ public class MessageMoreInput extends RelativeLayout
         SimpleCommonUtils.addEmojiPageSetEntity(pageSetAdapter, getContext(), emoticonClickListener);
         setAdapter(pageSetAdapter);
         SimpleCommonUtils.initEmoticonsEditText(messageInput);
+
+        initMenuView();
+    }
+
+    /**
+     * 显示表情view
+     */
+    private void showFaceView(){
+        if(mLayoutMore.getVisibility() == VISIBLE){
+            mLayoutMore.setVisibility(View.GONE);
+            mLayoutKeyboard.setVisibility(View.VISIBLE);
+            mImageModel.setImageResource(R.drawable.ic_svg_message_broad);
+        }else{
+            mLayoutMore.setVisibility(View.GONE);
+            mImageModel.setImageResource(R.drawable.ic_svg_message_broad);
+            EmoticonsKeyboardUtils.closeSoftKeyboard(messageInput);
+            new Handler().postDelayed(new Runnable() {
+                @Override
+                public void run() {
+                    mLayoutParent.startAnimation(enterAnimation);
+                    mLayoutMenuParent.setVisibility(VISIBLE);
+                    mLayoutKeyboard.setVisibility(View.VISIBLE);
+                }
+            },100);
+        }
+
+    }
+
+    private void dismissFaceView(){
+        mLayoutMore.setVisibility(View.GONE);
+        mLayoutKeyboard.setVisibility(View.GONE);
+        mLayoutMenuParent.setVisibility(GONE);
+        mImageModel.setImageResource(R.drawable.ic_svg_message_face);
+        EmoticonsKeyboardUtils.openSoftKeyboard(messageInput);
+    }
+
+
+    private void showMoreMenuView(){
+        mImageModel.setImageResource(R.drawable.ic_svg_message_face);
+        if(mLayoutKeyboard.getVisibility() == VISIBLE){
+            mLayoutKeyboard.setVisibility(View.GONE);
+            mLayoutMore.setVisibility(View.VISIBLE);
+        }else{
+            mLayoutKeyboard.setVisibility(View.GONE);
+            EmoticonsKeyboardUtils.closeSoftKeyboard(messageInput);
+            new Handler().postDelayed(new Runnable() {
+                @Override
+                public void run() {
+                    mLayoutParent.startAnimation(enterAnimation);
+                    mLayoutMenuParent.setVisibility(View.VISIBLE);
+                    mLayoutMore.setVisibility(View.VISIBLE);
+                }
+            },100);
+        }
+    }
+
+    private void dismissMoreMenuView(){
+        mLayoutKeyboard.setVisibility(View.GONE);
+        mLayoutMore.setVisibility(View.GONE);
+        mLayoutMenuParent.setVisibility(GONE);
+        EmoticonsKeyboardUtils.openSoftKeyboard(messageInput);
     }
 
     public void setAdapter(PageSetAdapter pageSetAdapter) {
@@ -358,10 +372,10 @@ public class MessageMoreInput extends RelativeLayout
     }
 
     public boolean isBack(){
-        if(!ShowEmoji){
-            ShowEmoji = true;
+        if(isShowMoreMenu){
+            isShowMoreMenu = false;
             mImageModel.setImageResource(R.drawable.ic_svg_message_face);
-            mLayoutKeyboard.setVisibility(View.GONE);
+            mLayoutMenuParent.setVisibility(View.GONE);
             return false;
         }else{
             return true;
@@ -369,13 +383,15 @@ public class MessageMoreInput extends RelativeLayout
     }
 
     public void closeMore(){
-        if(ShowEmoji){
-            ShowEmoji = false;
-            EmoticonsKeyboardUtils.closeSoftKeyboard(messageInput);
-        }else{
-            ShowEmoji = true;
-            mImageModel.setImageResource(R.drawable.ic_svg_message_face);
+        if(isShowMoreMenu){
+            isShowMoreMenu = false;
+            mLayoutMore.setVisibility(View.GONE);
             mLayoutKeyboard.setVisibility(View.GONE);
+            mLayoutMenuParent.setVisibility(GONE);
+            mImageModel.setImageResource(R.drawable.ic_svg_message_face);
+        }else{
+            isShowMoreMenu = true;
+            EmoticonsKeyboardUtils.closeSoftKeyboard(messageInput);
         }
     }
 
@@ -410,5 +426,96 @@ public class MessageMoreInput extends RelativeLayout
     @Override
     public void onToolBarItemClick(PageSetEntity pageSetEntity) {
         mEmoticonsFuncView.setCurrentPageSet(pageSetEntity);
+    }
+
+    private void initMenuView(){
+        mRecyclerMenu.setLayoutManager(new GridLayoutManager(getContext(),4));
+        mMenuAdapter = new MenuAdapter();
+        mRecyclerMenu.setAdapter(mMenuAdapter);
+        mRecyclerMenu.addItemDecoration(new SpaceItemDecoration(30));
+    }
+
+    public void setMenuData(List<MenuEntity> data,OnMenuItemClickListener listener){
+        entities.clear();
+        entities.addAll(data);
+        this.listener  = listener;
+        mMenuAdapter.notifyDataSetChanged();
+    }
+
+    private List<MenuEntity> entities = new ArrayList<>();
+    private OnMenuItemClickListener listener;
+
+    public class MenuAdapter extends RecyclerView.Adapter<MenuViewHolder>{
+
+        @Override
+        public MenuViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+            return new MenuViewHolder(LayoutInflater.from(getContext()).inflate(R.layout.item_input_menu,null));
+        }
+
+        @Override
+        public void onBindViewHolder(MenuViewHolder holder, final int position) {
+            MenuEntity entity = entities.get(position);
+            holder.mImageIcon.setImageResource(entity.icon);
+            holder.mTextTitle.setText(entity.title);
+
+            if(listener != null){
+                holder.mLayoutParent.setOnClickListener(new OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        listener.onClick(position);
+                    }
+                });
+            }
+        }
+
+        @Override
+        public int getItemCount() {
+            return entities.size();
+        }
+    }
+
+    public class MenuViewHolder extends RecyclerView.ViewHolder{
+
+        protected View mLayoutParent;
+        protected ImageView mImageIcon;
+        protected TextView mTextTitle;
+
+        public MenuViewHolder(View view){
+            super(view);
+            mLayoutParent = view.findViewById(R.id.mLayoutParent);
+            mImageIcon = (ImageView)view.findViewById(R.id.mImageIcon);
+            mTextTitle = (TextView)view.findViewById(R.id.mTextTitle);
+        }
+    }
+
+    public interface OnMenuItemClickListener{
+        void onClick(int position);
+    }
+
+    public static class MenuEntity{
+        private String title;
+        private int icon;
+
+        public MenuEntity(String title,int icon){
+            this.icon = icon;
+            this.title = title;
+        }
+    }
+
+    private class SpaceItemDecoration extends RecyclerView.ItemDecoration {
+
+        private int space;
+
+        public SpaceItemDecoration(int space) {
+            this.space = DeviceUtil.dip2px(getContext(),space);
+        }
+
+        @Override
+        public void getItemOffsets(Rect outRect, View view, RecyclerView parent, RecyclerView.State state) {
+            //不是第一个的格子都设一个左边和底部的间距
+            outRect.bottom = space;
+            outRect.top = space;
+        }
+
     }
 }

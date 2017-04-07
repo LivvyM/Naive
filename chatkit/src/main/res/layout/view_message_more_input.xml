@@ -49,8 +49,7 @@
                 android:layout_height="34dp"
                 android:layout_gravity="center"
                 android:visibility="visible"
-                android:src="@drawable/ic_svg_message_more"
-                />
+                android:src="@drawable/ic_svg_message_more" />
             <Button
                 android:id="@id/messageSendButton"
                 android:layout_width="40dp"
@@ -72,108 +71,68 @@
         android:background="#D5D5D5"
         />
 
-    <RelativeLayout
-        android:id="@+id/mLayoutKeyboard"
+    <FrameLayout
+        android:id="@+id/mLayoutMenuParent"
         android:layout_width="match_parent"
-        android:background="@color/white"
-        android:layout_height="wrap_content"
-        android:visibility="gone"
+        android:layout_height="match_parent"
         >
-        <com.stfalcon.chatkit.emoji.widget.EmoticonsFuncView
-            android:id="@+id/view_epv"
+
+        <LinearLayout
+            android:id="@+id/mLayoutMore"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_above="@+id/view_eiv"
-            android:layout_marginTop="4dp"
-            android:layout_marginBottom="4dp"
-            android:orientation="vertical" />
-
-        <com.stfalcon.chatkit.emoji.widget.EmoticonsIndicatorView
-            android:id="@+id/view_eiv"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_above="@+id/view_spit"
-            android:gravity="center"
-            android:orientation="horizontal"
-            android:paddingBottom="@dimen/indicator_margin" />
-
-        <include
-            android:id="@+id/view_spit"
-            layout="@layout/ic_spitview_horizontal"
-            android:layout_width="match_parent"
-            android:layout_height="0.6dp"
-            android:layout_above="@+id/view_etv" />
-
-        <com.stfalcon.chatkit.emoji.widget.EmoticonsToolBarView
-            android:id="@+id/view_etv"
-            android:layout_width="match_parent"
-            android:layout_height="@dimen/bar_height"
-            android:layout_alignParentBottom="true"
-            android:orientation="vertical" />
-
-    </RelativeLayout>
-
-    <LinearLayout
-        android:id="@+id/mLayoutMore"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@color/white"
-        android:paddingTop="@dimen/indicator_margin"
-        android:orientation="horizontal"
-        android:visibility="gone"
-        >
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:gravity="center"
+            android:background="@color/white"
             android:orientation="vertical">
 
-            <ImageView
-                android:layout_width="@dimen/message_menu_more_size"
-                android:layout_height="@dimen/message_menu_more_size"
-                android:src="@drawable/ic_svg_photo"
-                />
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/mRecyclerMenu"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"/>
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textColor="#666666"
+        </LinearLayout>
+
+        <RelativeLayout
+            android:id="@+id/mLayoutKeyboard"
+            android:layout_width="match_parent"
+            android:background="@color/white"
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            >
+            <com.stfalcon.chatkit.emoji.widget.EmoticonsFuncView
+                android:id="@+id/view_epv"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_above="@+id/view_eiv"
                 android:layout_marginTop="4dp"
-                android:text="相册"
-                android:textSize="13sp"
-                />
+                android:layout_marginBottom="4dp"
+                android:orientation="vertical" />
 
-        </LinearLayout>
+            <com.stfalcon.chatkit.emoji.widget.EmoticonsIndicatorView
+                android:id="@+id/view_eiv"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_above="@+id/view_spit"
+                android:gravity="center"
+                android:orientation="horizontal"
+                android:paddingBottom="@dimen/indicator_margin" />
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:gravity="center"
-            android:orientation="vertical">
+            <include
+                android:id="@+id/view_spit"
+                layout="@layout/ic_spitview_horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="0.6dp"
+                android:layout_above="@+id/view_etv" />
 
-        </LinearLayout>
+            <com.stfalcon.chatkit.emoji.widget.EmoticonsToolBarView
+                android:id="@+id/view_etv"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/bar_height"
+                android:layout_alignParentBottom="true"
+                android:orientation="vertical" />
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:gravity="center"
-            android:orientation="vertical">
+        </RelativeLayout>
 
-        </LinearLayout>
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:gravity="center"
-            android:orientation="vertical">
-
-        </LinearLayout>
-
-    </LinearLayout>
+    </FrameLayout>
 
 </LinearLayout>
