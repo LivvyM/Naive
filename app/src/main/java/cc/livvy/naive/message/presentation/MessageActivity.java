@@ -25,6 +25,9 @@ import cc.livvy.naive.R;
 import cc.livvy.naive.base.AppBaseParamActivity;
 import cc.livvy.naive.message.fixtures.MessagesListFixtures;
 import cc.livvy.widget.image.ImageViewUtils;
+import cc.livvy.widget.slidr.Slidr;
+import cc.livvy.widget.slidr.model.SlidrConfig;
+import cc.livvy.widget.slidr.model.SlidrPosition;
 import cn.finalteam.rxgalleryfinal.RxGalleryFinal;
 import cn.finalteam.rxgalleryfinal.bean.MediaBean;
 import cn.finalteam.rxgalleryfinal.imageloader.ImageLoaderType;
@@ -60,6 +63,14 @@ public class MessageActivity extends AppBaseParamActivity implements MessagesLis
         setContentView(R.layout.activity_message);
 
         setTitle(title.equals("") ? "title" : title);
+
+        SlidrConfig mConfig = new SlidrConfig.Builder()
+                .position(SlidrPosition.LEFT)
+                .velocityThreshold(2400)
+                .distanceThreshold(.25f)
+                .edge(true)
+                .build();
+        Slidr.attach(this, mConfig);
 
         initView();
     }
@@ -193,7 +204,6 @@ public class MessageActivity extends AppBaseParamActivity implements MessagesLis
                     protected void onEvent(ImageMultipleResultEvent imageMultipleResultEvent) throws Exception {
                         for (MediaBean mediaBean : imageMultipleResultEvent.getResult()){
                             String bitmapPath = mediaBean.getThumbnailBigPath();
-                            Log.e("====","bitmapPath" + bitmapPath);
                             adapter.addToStart(new MessagesListFixtures.Message(bitmapPath,true), true);
                         }
                     }
