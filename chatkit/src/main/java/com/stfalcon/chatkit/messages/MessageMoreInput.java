@@ -241,6 +241,7 @@ public class MessageMoreInput extends RelativeLayout
             public boolean onTouch(View v, MotionEvent event) {
                 if(isShowMoreMenu){
                     isShowMoreMenu = false;
+                    mImageModel.setImageResource(R.drawable.ic_svg_message_face);
                     dismissMoreMenuView();
                 }
                 return false;
@@ -271,6 +272,7 @@ public class MessageMoreInput extends RelativeLayout
         EmoticonClickListener emoticonClickListener = SimpleCommonUtils.getCommonEmoticonClickListener(messageInput);
         PageSetAdapter pageSetAdapter = new PageSetAdapter();
         SimpleCommonUtils.addEmojiPageSetEntity(pageSetAdapter, getContext(), emoticonClickListener);
+        SimpleCommonUtils.addXhsPageSetEntity(pageSetAdapter,getContext(),emoticonClickListener);
         setAdapter(pageSetAdapter);
         SimpleCommonUtils.initEmoticonsEditText(messageInput);
 
@@ -391,6 +393,7 @@ public class MessageMoreInput extends RelativeLayout
             mImageModel.setImageResource(R.drawable.ic_svg_message_face);
         }else{
             isShowMoreMenu = true;
+            mImageModel.setImageResource(R.drawable.ic_svg_message_face);
             EmoticonsKeyboardUtils.closeSoftKeyboard(messageInput);
         }
     }

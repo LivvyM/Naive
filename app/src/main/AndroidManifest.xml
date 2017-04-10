@@ -42,7 +42,9 @@
             android:name=".message.presentation.MessageActivity"
             android:launchMode="singleTop"
             android:screenOrientation="portrait"
-            android:windowSoftInputMode="stateHidden|stateUnchanged" />
+            android:windowSoftInputMode="stateHidden|stateUnchanged"
+            android:theme="@style/Theme.Slidr.Slidable"
+            />
 
         <activity android:name=".message.presentation.Test" />
 

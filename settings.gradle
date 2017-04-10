@@ -1,1 +1,1 @@
-include ':app', ':common', ':widget', ':skin.black', ':skin.default', ':skin.red', ':chatkit', ':photoview', ':gallery'
+include ':app', ':common', ':widget', ':skin.black', ':skin.default', ':skin.red', ':chatkit', ':photoview', ':gallery', ':slidr'
