@@ -50,7 +50,6 @@ public class ImageViewUtils {
         Glide.with(BaseApplication.getInstance())
                 .load(url)
                 .centerCrop()
-//                .bitmapTransform(new RoundedCornersTransformation(BaseApplication.getInstance(),25,0))
                 .into(new SimpleTarget<GlideDrawable>() {
                     @Override
                     public void onResourceReady(GlideDrawable resource, GlideAnimation<? super GlideDrawable> glideAnimation) {
