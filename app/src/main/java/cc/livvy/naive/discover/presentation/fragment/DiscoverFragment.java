@@ -10,6 +10,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.bumptech.glide.Glide;
+
 import cc.livvy.naive.R;
 import cc.livvy.naive.base.AppBaseFragment;
 import cc.livvy.naive.discover.adapter.DiscoverItemAdapter;
@@ -57,6 +59,14 @@ public class DiscoverFragment extends AppBaseFragment implements BaseQuickAdapte
 
         adapter.openLoadAnimation(BaseQuickAdapter.ALPHAIN);
         mRecyclerView.setAdapter(adapter);
+
+        mRecyclerView.addOnScrollListener(new RecyclerView.OnScrollListener() {
+            @Override
+            public void onScrollStateChanged(RecyclerView recyclerView, int newState) {
+                super.onScrollStateChanged(recyclerView, newState);
+            }
+        });
+
     }
 
     @Override
