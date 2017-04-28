@@ -4,13 +4,10 @@ import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
-import android.support.v7.widget.RecyclerView;
-import android.util.Log;
 import android.view.KeyEvent;
 import android.view.MotionEvent;
 import android.view.View;
 import android.widget.ImageView;
-import android.widget.Toast;
 
 import com.stfalcon.chatkit.commons.ImageLoader;
 import com.stfalcon.chatkit.messages.MessageInput;
@@ -72,6 +69,7 @@ public class MessageActivity extends AppBaseParamActivity implements MessagesLis
                 .build();
         Slidr.attach(this, mConfig);
 
+
         initView();
     }
 
@@ -102,6 +100,7 @@ public class MessageActivity extends AppBaseParamActivity implements MessagesLis
             @Override
             public boolean onSubmit(CharSequence input) {
                 adapter.addToStart(new MessagesListFixtures.Message(input.toString()), true);
+//                adapter.update();
                 return true;
             }
         });

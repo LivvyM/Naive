@@ -2,6 +2,7 @@ package cc.livvy.naive.discover.adapter;
 
 import android.content.Context;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -61,6 +62,7 @@ public class DiscoverItemAdapter extends BaseQuickAdapter<DiscoverModel,Discover
         }
 
         public void bind(DiscoverModel bean){
+            Log.e("=======","111111111111111111111");
             ImageViewUtils.bindCircleImageView(mImageAvatar,bean.getAvatar());
             ImageViewUtils.bindImageView(mImagePicture,bean.getPhoto());
 
