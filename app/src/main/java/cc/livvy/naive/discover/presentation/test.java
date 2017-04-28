@@ -5,4 +5,8 @@ package cc.livvy.naive.discover.presentation;
  */
 
 public class test {
+
+    public void main(String[] arg){
+
+    }
 }
