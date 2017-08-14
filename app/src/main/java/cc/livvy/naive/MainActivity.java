@@ -10,12 +10,13 @@ import cc.livvy.naive.base.AppBaseActivity;
 import cc.livvy.naive.discover.presentation.fragment.DiscoverFragment;
 import cc.livvy.naive.message.presentation.fragment.MessageFragment;
 import cc.livvy.naive.mine.presentation.fragment.MineFragment;
+import cc.livvy.naive.ppt.PPTFragment;
 
 public class MainActivity extends AppBaseActivity {
 
     protected FragmentTabHost fragmentTabHost;
 
-    private String mTextTitle[] = {"chat","discover","message","user"};
+    private String mTextTitle[] = {"ppt","discover","message","user"};
 
     private int mDrawableSelector[] = {
             R.drawable.main_tab_chat_selector,
@@ -24,7 +25,7 @@ public class MainActivity extends AppBaseActivity {
             R.drawable.main_tab_user_selector
     };
 
-    private Class mFragmentArray[] = {MessageFragment.class, DiscoverFragment.class, TestFragment.class, MineFragment.class};
+    private Class mFragmentArray[] = {PPTFragment.class, DiscoverFragment.class, TestFragment.class, MineFragment.class};
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
