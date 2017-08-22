@@ -3,14 +3,18 @@ package cc.livvy.naive.mine.presentation.fragment;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.text.TextUtils;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.hyphenate.chat.EMClient;
+
 import cc.livvy.naive.R;
 import cc.livvy.naive.mine.presentation.ThemeActivity;
+import cc.livvy.naive.ui.SettingActivity;
 import cc.livvy.widget.skin.base.SkinBaseFragment;
 
 /**
@@ -47,6 +51,17 @@ public class MineFragment extends SkinBaseFragment {
                 startActivity(new Intent(getActivity(), ThemeActivity.class));
             }
         });
+
+        mImageSet.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(getActivity(), SettingActivity.class));
+            }
+        });
+
+        if (!TextUtils.isEmpty(EMClient.getInstance().getCurrentUser())) {
+            mTextName.setText(EMClient.getInstance().getCurrentUser());
+        }
 
         addThemeBackground(mLayoutAccount,R.color.theme_color);
         addThemeImageResource(mImageSet,R.drawable.ic_svg_set);

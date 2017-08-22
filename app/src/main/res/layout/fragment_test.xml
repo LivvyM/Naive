@@ -8,4 +8,13 @@
 
     <include layout="@layout/layout_toolbar_fragment" />
 
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:textColor="@color/text_999"
+        android:text="敬请期待～"
+        android:gravity="center"
+        android:textSize="14sp"
+        />
+
 </LinearLayout>

@@ -1,0 +1,2 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merger version="3"><dataSet config="main"><source path="/home/livvy/AndroidStudioProjects/Naive/redpacketlibrary/libs"><file name="alipaySdk-20161129.jar" path="/home/livvy/AndroidStudioProjects/Naive/redpacketlibrary/libs/alipaySdk-20161129.jar"/><file name="volley-1.0.19.jar" path="/home/livvy/AndroidStudioProjects/Naive/redpacketlibrary/libs/volley-1.0.19.jar"/></source></dataSet><dataSet config="release"><source path="/home/livvy/AndroidStudioProjects/Naive/redpacketlibrary/build-types/release/jniLibs"/></dataSet></merger>

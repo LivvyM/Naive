@@ -1,5 +1,6 @@
 package cc.livvy.naive.ppt;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.widget.LinearLayoutManager;
@@ -7,6 +8,8 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+
+import org.jetbrains.annotations.NotNull;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -18,7 +21,7 @@ import cc.livvy.naive.base.AppBaseFragment;
  * Created by livvy on 17-8-14.
  */
 
-public class PPTFragment extends AppBaseFragment {
+public class PPTFragment extends AppBaseFragment implements PPtListAdapter.OnItemClickListener {
 
     private PPtListAdapter adapter;
     private RecyclerView mRecyclerView;
@@ -41,7 +44,7 @@ public class PPTFragment extends AppBaseFragment {
         mRecyclerView = (RecyclerView) view.findViewById(R.id.mRecyclerView);
         mRecyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
 
-        adapter = new PPtListAdapter();
+        adapter = new PPtListAdapter(this);
         mRecyclerView.setAdapter(adapter);
 
         List<String> data = new ArrayList<>();
@@ -52,5 +55,11 @@ public class PPTFragment extends AppBaseFragment {
         data.add("https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1502704140417&di=97a08603be806dc97a0dae185eba27aa&imgtype=0&src=http%3A%2F%2Fdynamic1.icourses.cn%2Fcoursepic%2F2015%2F0517%2F4596_480.jpg");
         adapter.setNewData(data);
 
+    }
+
+    @Override
+    public void onItemClick(@NotNull String id, @NotNull String title) {
+        startActivity(new Intent(getActivity(), PPTDetailTeacherActivity.class).putExtra("chatType", 3).
+                putExtra("userId", "25057742094337"));
     }
 }
