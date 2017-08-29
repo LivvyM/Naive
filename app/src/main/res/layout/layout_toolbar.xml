@@ -3,7 +3,6 @@
     android:orientation="horizontal"
     android:layout_width="match_parent"
     android:layout_height="@dimen/toolbar_height"
-    android:paddingRight="@dimen/unit_30px"
     android:id="@+id/mLayoutTitleParent"
     android:background="@color/theme_color"
     android:translationZ="0.6dp"
@@ -34,5 +33,21 @@
         android:layout_marginLeft="@dimen/unit_16px"
         android:layout_toRightOf="@+id/mViewBack"
         />
+
+    <FrameLayout
+        android:id="@+id/mViewRight"
+        android:layout_width="@dimen/toolbar_height"
+        android:layout_height="@dimen/toolbar_height"
+        android:layout_alignParentRight="true"
+        android:visibility="gone"
+        android:background="@drawable/drawable_white_click_background"
+        >
+        <ImageView
+            android:id="@+id/mImageRight"
+            android:layout_width="@dimen/toolbar_ic_size"
+            android:layout_height="@dimen/toolbar_ic_size"
+            android:layout_gravity="center"
+            />
+    </FrameLayout>
 
 </RelativeLayout>

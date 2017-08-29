@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/white"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:id="@+id/mLayoutParent"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="10dp">
+
+        <ImageView
+            android:id="@+id/mImageLogo"
+            android:layout_width="54dp"
+            android:layout_height="54dp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/mTextTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="8节课让你快速脱单"
+                android:textColor="@color/text_333"
+                android:textSize="14sp" />
+
+            <TextView
+                android:id="@+id/mTextTag"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="3dp"
+                android:text="这个就是个公开课"
+                android:textColor="#acacac"
+                android:textSize="10sp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="6dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/mTextNum"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="2154人订阅"
+                    android:textColor="#acacac"
+                    android:textSize="10sp" />
+
+                <TextView
+                    android:id="@+id/mTextStatus"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="免费"
+                    android:textColor="#14e715"
+                    android:textSize="11sp" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.6dp"
+        android:background="@color/line"
+        />
+
+</LinearLayout>

@@ -36,14 +36,22 @@ public class ImageViewUtils {
                 .into(view);
     }
 
-    public static void bindImageView(@NonNull ImageView view, String url){
+    public static void bindImageView(@NonNull ImageView view, String url) {
         Glide.with(BaseApplication.getInstance())
                 .load(url)
                 .centerCrop()
                 .into(view);
     }
 
-    public static void bindMessageImageView(final @NonNull ImageView view, String url){
+    public static void bindRoundImageView(@NonNull ImageView view, String url) {
+        Glide.with(BaseApplication.getInstance())
+                .load(url)
+                .centerCrop()
+                .bitmapTransform(new RoundedCornersTransformation(BaseApplication.getInstance(), 2, 0))
+                .into(view);
+    }
+
+    public static void bindMessageImageView(final @NonNull ImageView view, String url) {
         if (!url.contains("http://") && !url.contains("https://")) {
             url = "file://" + url;
         }
@@ -53,32 +61,32 @@ public class ImageViewUtils {
                 .into(new SimpleTarget<GlideDrawable>() {
                     @Override
                     public void onResourceReady(GlideDrawable resource, GlideAnimation<? super GlideDrawable> glideAnimation) {
-                        view.setLayoutParams(buildLayoutParams(view.getContext(),resource));
+                        view.setLayoutParams(buildLayoutParams(view.getContext(), resource));
                         view.setImageDrawable(resource);
                     }
                 });
     }
 
-    private static FlexboxLayout.LayoutParams buildLayoutParams(Context context, GlideDrawable resource){
+    private static FlexboxLayout.LayoutParams buildLayoutParams(Context context, GlideDrawable resource) {
         int width = resource.getIntrinsicWidth();
         int height = resource.getIntrinsicHeight();
         int maxSize = getScreenWidth(context) / 2;
-        if(width >= height){
+        if (width >= height) {
             /**
              * 宽图片
              */
-            height = (int)(maxSize * ((double) height / width));
+            height = (int) (maxSize * ((double) height / width));
             width = maxSize;
-        }else{
+        } else {
             /**
              * 长图片
              */
-            width = (int)(maxSize * ((double) width / height));
+            width = (int) (maxSize * ((double) width / height));
             height = maxSize;
 
         }
 
-        return new FlexboxLayout.LayoutParams(width,height);
+        return new FlexboxLayout.LayoutParams(width, height);
     }
 
     // 获取屏幕的宽度

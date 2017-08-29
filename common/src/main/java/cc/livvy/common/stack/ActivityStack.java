@@ -63,10 +63,8 @@ public class ActivityStack {
 
     /**
      * 完全退出
-     *
-     * @param context
      */
-    public void exit(Context context) {
+    public void exit() {
         while (activityList.size() > 0) {
             activityList.get(activityList.size() - 1).finish();
         }

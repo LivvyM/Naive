@@ -1,17 +1,47 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     package="cc.livvy.naive">
 
+    <uses-permission android:name="android.permission.VIBRATE" />
     <uses-permission android:name="android.permission.INTERNET" />
-    <!--声明使用相机-->
-    <uses-feature android:name="android.hardware.camera" android:required="true"/>
-
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.GET_TASKS" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+    <uses-permission android:name="android.permission.USE_CREDENTIALS" />
+    <uses-permission android:name="com.android.launcher.permission.READ_SETTINGS" />
+    <uses-permission android:name="android.permission.BROADCAST_STICKY" />
+    <uses-permission android:name="android.permission.WRITE_SETTINGS" />
+    <uses-permission android:name="android.permission.REQUEST_IGNORE_BATTERY_OPTIMIZATIONS" />
+
+    <!-- GCM required, remember replace "com.hyphenate.chatuidemo" to your own package -->
+    <uses-permission android:name="com.google.android.c2dm.permission.RECEIVE" />
+
+    <permission
+        android:name="com.hyphenate.chatuidemo.permission.C2D_MESSAGE"
+        android:protectionLevel="signature" />
+
+    <uses-permission android:name="com.hyphenate.chatuidemo.permission.C2D_MESSAGE" />
+
+    <permission
+        android:name="com.hyphenate.chatuidemo.permission.MIPUSH_RECEIVE"
+        android:protectionLevel="signatureOrSystem" />
+
+    <uses-permission android:name="com.hyphenate.chatuidemo.permission.MIPUSH_RECEIVE" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
 
-
     <application
-        android:name=".Application"
+        android:name=".DemoApplication"
         android:allowBackup="true"
         android:icon="@mipmap/ic_logo"
         android:label="@string/app_name"
@@ -19,21 +49,19 @@
         android:theme="@style/AppTheme">
         <activity
             android:name=".MainActivity"
+            android:launchMode="singleTask"
             android:screenOrientation="portrait" />
-
         <activity
             android:name=".SplashActivity"
             android:launchMode="singleTop"
             android:screenOrientation="portrait"
-            android:theme="@style/AppTheme.Splash"
-            >
+            android:theme="@style/AppTheme.Splash">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
         <activity
             android:name=".mine.presentation.ThemeActivity"
             android:launchMode="singleTop"
@@ -42,22 +70,177 @@
             android:name=".message.presentation.MessageActivity"
             android:launchMode="singleTop"
             android:screenOrientation="portrait"
-            android:windowSoftInputMode="stateHidden|stateUnchanged"
             android:theme="@style/Theme.Slidr.Slidable"
-            />
-
+            android:windowSoftInputMode="stateHidden|stateUnchanged" />
         <activity android:name=".message.presentation.Test" />
-
-        <activity android:name="cn.finalteam.rxgalleryfinal.ui.activity.MediaActivity"
-            android:screenOrientation="portrait"
+        <activity
+            android:name="cn.finalteam.rxgalleryfinal.ui.activity.MediaActivity"
             android:exported="true"
-            />
-
+            android:screenOrientation="portrait" />
         <activity
             android:name="com.yalantis.ucrop.UCropActivity"
             android:screenOrientation="portrait"
-            android:theme="@android:style/Theme.NoTitleBar.Fullscreen"
+            android:theme="@android:style/Theme.NoTitleBar.Fullscreen" />
+
+        <activity android:name=".ppt.PPTDetailTeacherActivity"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait"
             />
+        <!-- 登陆 -->
+        <activity
+            android:name=".LoginActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustResize|stateVisible" />
+        <activity android:name=".ui.SettingActivity"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait" />
+
+        <activity android:name=".ppt.ContextMenuActivity"
+            android:theme="@style/MyDialogStyle"
+            android:screenOrientation="portrait" />
+
+
+
+
+
+        <!-- gcm start -->
+        <receiver
+            android:name="com.hyphenate.chat.EMGCMBroadcastReceiver"
+            android:exported="true"
+            android:permission="com.google.android.c2dm.permission.SEND">
+            <intent-filter>
+                <action android:name="com.google.android.c2dm.intent.RECEIVE" />
+
+                <category android:name="com.hyphenate.chatuidemo" />
+            </intent-filter>
+        </receiver>
+
+        <service
+            android:name="com.hyphenate.chat.EMGCMListenerService"
+            android:exported="false" />
+
+        <!--<receiver-->
+            <!--android:name=".receiver.GCMPushBroadCast"-->
+            <!--android:exported="false">-->
+            <!--<intent-filter>-->
+                <!--<action android:name="com.hyphenate.sdk.push" />-->
+
+                <!--<category android:name="com.hyphenate.chatuidemo" />-->
+            <!--</intent-filter>-->
+        <!--</receiver>-->
+        <!--&lt;!&ndash; gcm end &ndash;&gt;-->
+
+
+        <!-- mi push -->
+        <service
+            android:name="com.xiaomi.mipush.sdk.PushMessageHandler"
+            android:enabled="true"
+            android:exported="true"
+            tools:ignore="ExportedService" />
+        <service
+            android:name="com.xiaomi.mipush.sdk.MessageHandleService"
+            android:enabled="true" />
+
+        <receiver
+            android:name="com.hyphenate.chat.EMMipushReceiver"
+            android:exported="true"
+            tools:ignore="ExportedReceiver">
+            <intent-filter>
+                <action android:name="com.xiaomi.mipush.RECEIVE_MESSAGE" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="com.xiaomi.mipush.MESSAGE_ARRIVED" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="com.xiaomi.mipush.ERROR" />
+            </intent-filter>
+        </receiver>
+        <!-- mi push end -->
+
+        <!--华为 HMS Config-->
+        <meta-data
+            android:name="com.huawei.hms.client.appid"
+            android:value="10492024" />
+        <!--华为推送 start-->
+        <receiver android:name="com.hyphenate.chat.EMHWPushReceiver">
+            <intent-filter>
+                <!-- 必须,用于接收 TOKEN -->
+                <action android:name="com.huawei.android.push.intent.REGISTRATION"/>
+                <!-- 必须，用于接收消息 -->
+                <action android:name="com.huawei.android.push.intent.RECEIVE"/>
+                <!-- 可选，用于点击通知栏或通知栏上的按钮后触发 onEvent 回调 -->
+                <action android:name="com.huawei.android.push.intent.CLICK"/>
+                <!-- 可选，查看 PUSH 通道是否连接，不查看则不需要 -->
+                <action android:name="com.huawei.intent.action.PUSH_STATE"/>
+            </intent-filter>
+        </receiver>
+
+        <receiver android:name="com.huawei.hms.support.api.push.PushEventReceiver">
+            <intent-filter>
+                <!-- 接收通道发来的通知栏消息，兼容老版本 PUSH -->
+                <action android:name="com.huawei.intent.action.PUSH"/>
+            </intent-filter>
+        </receiver>
+        <!-- huawei push end -->
+
+        <!--<service-->
+            <!--android:name="com.umeng.update.net.DownloadingService"-->
+            <!--android:process=":DownloadingService" />-->
+
+        <!--<activity-->
+            <!--android:name="com.umeng.update.UpdateDialogActivity"-->
+            <!--android:theme="@android:style/Theme.Translucent.NoTitleBar" />-->
+
+        <!-- 设置环信应用的appkey -->
+        <meta-data
+            android:name="EASEMOB_APPKEY"
+            android:value="easemob-demo#chatdemoui" />
+        <!-- 声明sdk所需的service -->
+        <service
+            android:name="com.hyphenate.chat.EMChatService"
+            android:exported="true"
+            tools:ignore="ExportedService" />
+        <service
+            android:name="com.hyphenate.chat.EMJobService"
+            android:exported="true"
+            android:permission="android.permission.BIND_JOB_SERVICE" />
+
+        <!-- 声明sdk所需的receiver -->
+        <receiver android:name="com.hyphenate.chat.EMMonitorReceiver">
+            <intent-filter>
+                <action android:name="android.intent.action.PACKAGE_REMOVED" />
+
+                <data android:scheme="package" />
+            </intent-filter>
+            <!-- 可选filter -->
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+                <action android:name="android.intent.action.USER_PRESENT" />
+            </intent-filter>
+        </receiver>
+
+        <!-- 百度地图所需的service -->
+        <service
+            android:name="com.baidu.location.f"
+            android:enabled="true"
+            android:process=":remote" />
+        <!-- umeng appkey，可忽略 -->
+        <meta-data
+            android:name="UMENG_APPKEY"
+            android:value="56aefe07e0f55a250d001a7c" />
+        <meta-data
+            android:name="UMENG_CHANNEL"
+            android:value="hyphenate" />
+        <meta-data
+            android:name="com.baidu.lbsapi.API_KEY"
+            android:value="3ecea51f560650b1ed8a4b99808f52e8" />
+
+        <!-- fabric start -->
+        <meta-data
+            android:name="io.fabric.ApiKey"
+            android:value="6b54bd4edc63eba3ef59d69f8e0a5070bea384e2" />
+        <!-- fabric end -->
+
     </application>
 
 </manifest>

@@ -1,4 +1,5 @@
 apply plugin: 'com.android.application'
+apply plugin: 'kotlin-android'
 
 android {
     compileSdkVersion 25
@@ -10,6 +11,7 @@ android {
         versionCode 1
         versionName "1.0"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+        multiDexEnabled true
         externalNativeBuild {
             cmake {
                 cppFlags ""
@@ -34,11 +36,20 @@ dependencies {
     androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
         exclude group: 'com.android.support', module: 'support-annotations'
     })
-    compile 'com.android.support:appcompat-v7:25.3.0'
-    testCompile 'junit:junit:4.12'
-    compile 'com.readystatesoftware.systembartint:systembartint:1.0.3'
     compile project(':widget')
     compile project(':chatkit')
     compile project(':gallery')
     compile project(':slidr')
+    compile project(':redpacketlibrary')
+    compile project(':easeui')
+    compile "org.jetbrains.kotlin:kotlin-stdlib-jre7:$kotlin_version"
+    compile 'com.android.support:appcompat-v7:25.3.0'
+    compile 'com.readystatesoftware.systembartint:systembartint:1.0.3'
+    compile 'com.android.support.constraint:constraint-layout:1.0.2'
+    compile 'com.parse:parse-android:1.13.1'
+    compile 'com.android.support:multidex:1.0.1'
+    testCompile 'junit:junit:4.12'
+}
+repositories {
+    mavenCentral()
 }

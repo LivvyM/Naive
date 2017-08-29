@@ -21,6 +21,9 @@ public class AppBaseActivity extends SkinBaseActivity{
     ImageView mImageBack;
     TextView mTextTitle;
     View mLayoutTitleParent;
+    View mViewRight;
+    ImageView mImageRight;
+
 
     @Override
     public void setContentView(int layoutResID) {
@@ -30,6 +33,8 @@ public class AppBaseActivity extends SkinBaseActivity{
             mLayoutTitleParent = findViewById(R.id.mLayoutTitleParent);
             mImageBack = (ImageView)findViewById(R.id.mImageBack);
             mTextTitle = (TextView)findViewById(R.id.mTextTitle);
+            mViewRight = findViewById(R.id.mViewRight);
+            mImageRight = (ImageView)findViewById(R.id.mImageRight);
 
             mViewBack.setOnClickListener(new View.OnClickListener() {
                 @Override
@@ -53,11 +58,27 @@ public class AppBaseActivity extends SkinBaseActivity{
         if(mViewBack != null){
             addThemeBackground(mViewBack,R.drawable.drawable_white_click_background);
         }
+        if(mViewRight != null){
+            addThemeBackground(mViewRight,R.drawable.drawable_white_click_background);
+        }
     }
 
     public void setTitle(String title){
         if(mTextTitle != null){
             mTextTitle.setText(title);
+        }
+    }
+
+    public void setRightDrawable(int drawable){
+        if(mViewRight != null && mImageRight != null){
+            mViewRight.setVisibility(View.VISIBLE);
+            mImageRight.setBackgroundResource(drawable);
+        }
+    }
+
+    public void setRightOnClickListener(View.OnClickListener listener){
+        if(mViewRight !=  null){
+            mViewRight.setOnClickListener(listener);
         }
     }
 
