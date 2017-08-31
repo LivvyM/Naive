@@ -17,9 +17,9 @@ public class CrystalLoopViewPager extends ViewPager {
     OnPageChangeListener mOuterPageChangeListener;
     private CrystalPageAdapter mAdapter;
 
-    private boolean isCanScroll = true;
+    private boolean isCanScroll = false;
     private int START_POSITION_MULTIPLE = 100;
-    private boolean canLoop = true;
+    private boolean canLoop = false;
 
     @Override
     public void setAdapter(PagerAdapter adapter) {

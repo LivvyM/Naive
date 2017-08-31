@@ -2269,12 +2269,14 @@ containing a value of this type.
         public static int ee_8=0x7f0200f7;
         public static int ee_9=0x7f0200f8;
         public static int ic_face=0x7f0200f9;
-        public static int ic_insert=0x7f0200fa;
-        public static int ic_keyword=0x7f0200fb;
-        public static int ic_launcher=0x7f0200fc;
-        public static int ic_voice=0x7f0200fd;
-        public static int notification_template_icon_bg=0x7f0200ff;
-        public static int recall_message_bg=0x7f0200fe;
+        public static int ic_head_default=0x7f0200fa;
+        public static int ic_insert=0x7f0200fb;
+        public static int ic_keyword=0x7f0200fc;
+        public static int ic_launcher=0x7f0200fd;
+        public static int ic_svg_default_logo=0x7f0200fe;
+        public static int ic_voice=0x7f0200ff;
+        public static int notification_template_icon_bg=0x7f020101;
+        public static int recall_message_bg=0x7f020100;
     }
     public static final class id {
         public static int action0=0x7f0a00ba;
@@ -3073,16 +3075,10 @@ containing a value of this type.
         public static int Base_Widget_AppCompat_TextView_SpinnerItem=0x7f07007f;
         public static int Base_Widget_AppCompat_Toolbar=0x7f0700c8;
         public static int Base_Widget_AppCompat_Toolbar_Button_Navigation=0x7f070080;
-        /**  模糊 
-         */
         public static int HeadScale=0x7f0700c9;
         public static int MyAlertDialog=0x7f0700ca;
         public static int MyDialogStyle=0x7f0700cb;
-        /**  模糊 
-         */
         public static int MyDialogStyleBottom=0x7f0700cc;
-        /**  模糊 
-         */
         public static int MyDialogStyleTop=0x7f0700cd;
         public static int Platform_AppCompat=0x7f07001a;
         public static int Platform_AppCompat_Light=0x7f07001b;

@@ -76,6 +76,10 @@
         "source": "/home/livvy/AndroidStudioProjects/Naive/easeui/src/main/res/drawable/ease_chat_send_btn_selector.xml"
     },
     {
+        "merged": "/home/livvy/AndroidStudioProjects/Naive/easeui/build/intermediates/res/merged/debug/drawable/notification_bg.xml",
+        "source": "/home/livvy/AndroidStudioProjects/Naive/easeui/build/intermediates/exploded-aar/com.android.support/appcompat-v7/25.3.0/res/drawable/notification_bg.xml"
+    },
+    {
         "merged": "/home/livvy/AndroidStudioProjects/Naive/easeui/build/intermediates/res/merged/debug/drawable/ease_btn_blue_selector.xml",
         "source": "/home/livvy/AndroidStudioProjects/Naive/easeui/src/main/res/drawable/ease_btn_blue_selector.xml"
     },
@@ -148,6 +152,10 @@
         "source": "/home/livvy/AndroidStudioProjects/Naive/easeui/build/intermediates/exploded-aar/com.android.support/appcompat-v7/24.2.1/res/drawable/abc_dialog_material_background.xml"
     },
     {
+        "merged": "/home/livvy/AndroidStudioProjects/Naive/easeui/build/intermediates/res/merged/debug/drawable/ic_svg_default_logo.xml",
+        "source": "/home/livvy/AndroidStudioProjects/Naive/easeui/build/intermediates/exploded-aar/Naive/widget/unspecified/res/drawable/ic_svg_default_logo.xml"
+    },
+    {
         "merged": "/home/livvy/AndroidStudioProjects/Naive/easeui/build/intermediates/res/merged/debug/drawable/ease_mm_listitem.xml",
         "source": "/home/livvy/AndroidStudioProjects/Naive/easeui/src/main/res/drawable/ease_mm_listitem.xml"
     },
@@ -188,6 +196,10 @@
         "source": "/home/livvy/AndroidStudioProjects/Naive/easeui/build/intermediates/exploded-aar/com.android.support/appcompat-v7/24.2.1/res/drawable/abc_ic_ab_back_material.xml"
     },
     {
+        "merged": "/home/livvy/AndroidStudioProjects/Naive/easeui/build/intermediates/res/merged/debug/drawable/notification_bg_low.xml",
+        "source": "/home/livvy/AndroidStudioProjects/Naive/easeui/build/intermediates/exploded-aar/com.android.support/appcompat-v7/25.3.0/res/drawable/notification_bg_low.xml"
+    },
+    {
         "merged": "/home/livvy/AndroidStudioProjects/Naive/easeui/build/intermediates/res/merged/debug/drawable/abc_btn_default_mtrl_shape.xml",
         "source": "/home/livvy/AndroidStudioProjects/Naive/easeui/build/intermediates/exploded-aar/com.android.support/appcompat-v7/24.2.1/res/drawable/abc_btn_default_mtrl_shape.xml"
     },
@@ -212,6 +224,10 @@
         "source": "/home/livvy/AndroidStudioProjects/Naive/easeui/src/main/res/drawable/ease_msg_state_failed_resend.xml"
     },
     {
+        "merged": "/home/livvy/AndroidStudioProjects/Naive/easeui/build/intermediates/res/merged/debug/drawable/sample_footer_loading.png",
+        "source": "/home/livvy/AndroidStudioProjects/Naive/easeui/build/intermediates/exploded-aar/Naive/widget/unspecified/res/drawable/sample_footer_loading.png"
+    },
+    {
         "merged": "/home/livvy/AndroidStudioProjects/Naive/easeui/build/intermediates/res/merged/debug/drawable/abc_list_selector_holo_dark.xml",
         "source": "/home/livvy/AndroidStudioProjects/Naive/easeui/build/intermediates/exploded-aar/com.android.support/appcompat-v7/24.2.1/res/drawable/abc_list_selector_holo_dark.xml"
     },
@@ -224,12 +240,28 @@
         "source": "/home/livvy/AndroidStudioProjects/Naive/easeui/build/intermediates/exploded-aar/com.android.support/appcompat-v7/24.2.1/res/drawable/abc_seekbar_thumb_material.xml"
     },
     {
+        "merged": "/home/livvy/AndroidStudioProjects/Naive/easeui/build/intermediates/res/merged/debug/drawable/sample_footer_loading_progress.xml",
+        "source": "/home/livvy/AndroidStudioProjects/Naive/easeui/build/intermediates/exploded-aar/Naive/widget/unspecified/res/drawable/sample_footer_loading_progress.xml"
+    },
+    {
         "merged": "/home/livvy/AndroidStudioProjects/Naive/easeui/build/intermediates/res/merged/debug/drawable/ease_sidebar_background_pressed.xml",
         "source": "/home/livvy/AndroidStudioProjects/Naive/easeui/src/main/res/drawable/ease_sidebar_background_pressed.xml"
     },
     {
+        "merged": "/home/livvy/AndroidStudioProjects/Naive/easeui/build/intermediates/res/merged/debug/drawable/notification_icon_background.xml",
+        "source": "/home/livvy/AndroidStudioProjects/Naive/easeui/build/intermediates/exploded-aar/com.android.support/appcompat-v7/25.3.0/res/drawable/notification_icon_background.xml"
+    },
+    {
         "merged": "/home/livvy/AndroidStudioProjects/Naive/easeui/build/intermediates/res/merged/debug/drawable/ease_chatfrom_bg.xml",
         "source": "/home/livvy/AndroidStudioProjects/Naive/easeui/src/main/res/drawable/ease_chatfrom_bg.xml"
+    },
+    {
+        "merged": "/home/livvy/AndroidStudioProjects/Naive/easeui/build/intermediates/res/merged/debug/drawable/shape_top_shadow_normal.xml",
+        "source": "/home/livvy/AndroidStudioProjects/Naive/easeui/build/intermediates/exploded-aar/Naive/widget/unspecified/res/drawable/shape_top_shadow_normal.xml"
+    },
+    {
+        "merged": "/home/livvy/AndroidStudioProjects/Naive/easeui/build/intermediates/res/merged/debug/drawable/notification_tile_bg.xml",
+        "source": "/home/livvy/AndroidStudioProjects/Naive/easeui/build/intermediates/exploded-aar/com.android.support/appcompat-v7/25.3.0/res/drawable/notification_tile_bg.xml"
     },
     {
         "merged": "/home/livvy/AndroidStudioProjects/Naive/easeui/build/intermediates/res/merged/debug/drawable/ease_common_tab_bg.xml",

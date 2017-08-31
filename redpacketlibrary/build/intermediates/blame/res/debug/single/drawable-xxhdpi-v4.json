@@ -1,19 +1,19 @@
 [
     {
-        "merged": "/home/livvy/AndroidStudioProjects/Naive/redpacketlibrary/build/intermediates/res/merged/debug/drawable-xxhdpi-v4/em_red_packet_chatfrom_bg_normal.9.png",
-        "source": "/home/livvy/AndroidStudioProjects/Naive/redpacketlibrary/res/drawable-xxhdpi/em_red_packet_chatfrom_bg_normal.9.png"
-    },
-    {
         "merged": "/home/livvy/AndroidStudioProjects/Naive/redpacketlibrary/build/intermediates/res/merged/debug/drawable-xxhdpi-v4/abc_btn_switch_to_on_mtrl_00001.9.png",
         "source": "/home/livvy/AndroidStudioProjects/Naive/redpacketlibrary/build/intermediates/exploded-aar/com.android.support/appcompat-v7/24.2.1/res/drawable-xxhdpi-v4/abc_btn_switch_to_on_mtrl_00001.9.png"
     },
     {
-        "merged": "/home/livvy/AndroidStudioProjects/Naive/redpacketlibrary/build/intermediates/res/merged/debug/drawable-xxhdpi-v4/em_red_packet_chatto_bg_focused.9.png",
-        "source": "/home/livvy/AndroidStudioProjects/Naive/redpacketlibrary/res/drawable-xxhdpi/em_red_packet_chatto_bg_focused.9.png"
+        "merged": "/home/livvy/AndroidStudioProjects/Naive/redpacketlibrary/build/intermediates/res/merged/debug/drawable-xxhdpi-v4/em_red_packet_chatfrom_bg_normal.9.png",
+        "source": "/home/livvy/AndroidStudioProjects/Naive/redpacketlibrary/res/drawable-xxhdpi/em_red_packet_chatfrom_bg_normal.9.png"
     },
     {
         "merged": "/home/livvy/AndroidStudioProjects/Naive/redpacketlibrary/build/intermediates/res/merged/debug/drawable-xxhdpi-v4/rp_error_page_icon.png",
         "source": "/home/livvy/AndroidStudioProjects/Naive/redpacketlibrary/build/intermediates/exploded-aar/com.hyphenate.redpacket/redpacket-alipay/1.1.2/res/drawable-xxhdpi-v4/rp_error_page_icon.png"
+    },
+    {
+        "merged": "/home/livvy/AndroidStudioProjects/Naive/redpacketlibrary/build/intermediates/res/merged/debug/drawable-xxhdpi-v4/em_red_packet_chatto_bg_focused.9.png",
+        "source": "/home/livvy/AndroidStudioProjects/Naive/redpacketlibrary/res/drawable-xxhdpi/em_red_packet_chatto_bg_focused.9.png"
     },
     {
         "merged": "/home/livvy/AndroidStudioProjects/Naive/redpacketlibrary/build/intermediates/res/merged/debug/drawable-xxhdpi-v4/rp_exclusive_sender_avatar_bg.png",
@@ -326,5 +326,9 @@
     {
         "merged": "/home/livvy/AndroidStudioProjects/Naive/redpacketlibrary/build/intermediates/res/merged/debug/drawable-xxhdpi-v4/em_red_packet_chatto_bg_normal.9.png",
         "source": "/home/livvy/AndroidStudioProjects/Naive/redpacketlibrary/res/drawable-xxhdpi/em_red_packet_chatto_bg_normal.9.png"
+    },
+    {
+        "merged": "/home/livvy/AndroidStudioProjects/Naive/redpacketlibrary/build/intermediates/res/merged/debug/drawable-xxhdpi-v4/ic_svg_default_logo.png",
+        "source": "/home/livvy/AndroidStudioProjects/Naive/redpacketlibrary/build/intermediates/exploded-aar/Naive/easeui/unspecified/res/drawable-xxhdpi-v4/ic_svg_default_logo.png"
     }
 ]

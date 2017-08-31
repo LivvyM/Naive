@@ -9,9 +9,20 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.View;
 
+import com.hyphenate.chat.EMClient;
+import com.hyphenate.chat.EMConversation;
+import com.hyphenate.chat.EMMessage;
 import com.hyphenate.easeui.ui.EaseChatFragment;
+import com.hyphenate.easeui.utils.EaseCommonUtils;
+
+import org.greenrobot.eventbus.EventBus;
+import org.greenrobot.eventbus.Subscribe;
+import org.greenrobot.eventbus.ThreadMode;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -32,6 +43,7 @@ public class PPTDetailTeacherActivity extends AppBaseParamActivity {
     public static PPTDetailTeacherActivity activityInstance;
 
     private CusConvenientBanner mCrystalCycleView;
+    private RecyclerView mCommentRecyclerView;
 
     private TabLayout mTabLayout;
     private ViewPager mViewPager;
@@ -48,7 +60,7 @@ public class PPTDetailTeacherActivity extends AppBaseParamActivity {
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_pptdetail_teacher);
-
+        EventBus.getDefault().register(this);
         setTitle(mTitle);
         setRightDrawable(R.drawable.ic_svg_qun);
 
@@ -80,12 +92,33 @@ public class PPTDetailTeacherActivity extends AppBaseParamActivity {
         mCrystalCycleView.setPageIndicator(new int[]{R.drawable.ic_page_indicator, R.drawable.ic_page_indicator_focused})
                 .setPageTransformer(CrystalCycleView.Transformer.ZoomOutSlideTransformer);
 
+
         mTabLayout = (TabLayout) findViewById(R.id.mTabLayout);
         mViewPager = (ViewPager) findViewById(R.id.mViewPager);
+
+        mCommentRecyclerView = (RecyclerView) findViewById(R.id.mCommentRecyclerView);
+
+        LinearLayoutManager layout = new LinearLayoutManager(this);
+        mCommentRecyclerView.setLayoutManager(layout);
 
         initCrystal();
 
         initTab();
+    }
+
+    private void refreshBullet() {
+        EMConversation conversation = EMClient.getInstance().chatManager().getConversation(toChatUsername, EaseCommonUtils.getConversationType(3), true);
+        java.util.List<EMMessage> var = conversation.getAllMessages();
+        List<EMMessage> list = new ArrayList<>();
+        for (EMMessage item : var) {
+            if (!item.getBooleanAttribute("em_send_owner", false) && !item.getBooleanAttribute("scroll_page",false)) {
+                list.add(item);
+            }
+        }
+        mCommentRecyclerView.setAdapter(new BulletAdapter(this, list));
+        mCommentRecyclerView.smoothScrollToPosition(list.size() - 1);
+
+        scrollPage();
     }
 
     private List<Integer> localImages = new ArrayList<>();
@@ -104,12 +137,21 @@ public class PPTDetailTeacherActivity extends AppBaseParamActivity {
             public Object createHolder() {
                 return new NetworkImageHolderView();
             }
-        }, localImages).setOnItemClickListener(new OnItemClickListener() {
+        }, localImages).setOnPageChangeListener(new ViewPager.OnPageChangeListener() {
             @Override
-            public void onItemClick(int position) {
+            public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
+            }
+
+            @Override
+            public void onPageSelected(int position) {
+                EventBus.getDefault().post(new ChatEventBus(ChatEventBus.OPT_ACTION_SCROLL, position));
+            }
+
+            @Override
+            public void onPageScrollStateChanged(int state) {
             }
         });
-//        mCrystalCycleView.startTurning(5000);
+        mCrystalCycleView.setManualPageable(false);
     }
 
     private void initTab() {
@@ -150,5 +192,42 @@ public class PPTDetailTeacherActivity extends AppBaseParamActivity {
         }
     }
 
+    private void scrollPage(){
+        EMConversation conversation = EMClient.getInstance().chatManager().getConversation(toChatUsername, EaseCommonUtils.getConversationType(3), true);
+        java.util.List<EMMessage> var = conversation.getAllMessages();
+        int index = -1;
+        for (EMMessage item : var) {
+            if (item.getBooleanAttribute("scroll_page",false)) {
+                index = item.getIntAttribute("scroll_page_index",-1);
+            }
+        }
+
+        if(index != -1 && mCrystalCycleView != null){
+            mCrystalCycleView.setcurrentitem(index);
+        }
+    }
+
+    /**
+     * 监听操作行为
+     */
+    @Subscribe(threadMode = ThreadMode.MAIN)
+    public void onEventMainThread(ChatEventBus event) {
+        if (event.opt == ChatEventBus.OPT_SEND_MESSAGE ||
+                event.opt == ChatEventBus.OPT_JOIN_ROOM) {
+            refreshBullet();
+        }else if(event.opt == ChatEventBus.OPT_PERMISSION){
+            if(mCrystalCycleView != null){
+                mCrystalCycleView.setManualPageable(event.isOwner);
+            }
+        }else if(event.opt == ChatEventBus.OPT_RECEIVE){
+            refreshBullet();
+        }
+    }
+
+    @Override
+    public void onDestroy() {
+        super.onDestroy();
+        EventBus.getDefault().unregister(this);
+    }
 
 }

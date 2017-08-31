@@ -60,6 +60,6 @@ public class PPTFragment extends AppBaseFragment implements PPtListAdapter.OnIte
     @Override
     public void onItemClick(@NotNull String id, @NotNull String title) {
         startActivity(new Intent(getActivity(), PPTDetailTeacherActivity.class).putExtra("chatType", 3).
-                putExtra("userId", "25057742094337"));
+                putExtra("userId", "25863806582785"));
     }
 }

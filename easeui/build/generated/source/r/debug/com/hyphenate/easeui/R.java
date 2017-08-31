@@ -2268,9 +2268,15 @@ containing a value of this type.
         public static int ee_7=0x7f0200f6;
         public static int ee_8=0x7f0200f7;
         public static int ee_9=0x7f0200f8;
-        public static int ic_launcher=0x7f0200f9;
-        public static int notification_template_icon_bg=0x7f0200fb;
-        public static int recall_message_bg=0x7f0200fa;
+        public static int ic_face=0x7f0200f9;
+        public static int ic_head_default=0x7f0200fa;
+        public static int ic_insert=0x7f0200fb;
+        public static int ic_keyword=0x7f0200fc;
+        public static int ic_launcher=0x7f0200fd;
+        public static int ic_svg_default_logo=0x7f0200fe;
+        public static int ic_voice=0x7f0200ff;
+        public static int notification_template_icon_bg=0x7f020101;
+        public static int recall_message_bg=0x7f020100;
     }
     public static final class id {
         public static int action0=0x7f0a00ba;

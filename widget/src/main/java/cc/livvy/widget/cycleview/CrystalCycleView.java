@@ -45,7 +45,7 @@ public class CrystalCycleView<T> extends LinearLayout {
     private boolean turning;
     private boolean canTurn = false;//自动翻页控制
     private boolean manualPageable = true;//手动滑动控制
-    private boolean canLoop = true;
+    private boolean canLoop = false;
     public enum PageIndicatorAlign{
         ALIGN_PARENT_LEFT,ALIGN_PARENT_RIGHT,CENTER_HORIZONTAL
     }
@@ -99,6 +99,11 @@ public class CrystalCycleView<T> extends LinearLayout {
         }
     };
 
+    public void setCanLoop(boolean isCanLoop){
+        this.canLoop = isCanLoop;
+        viewPager.setCanLoop(canLoop);
+    }
+
     public CrystalCycleView(Context context) {
         this(context, null);
     }
@@ -109,7 +114,7 @@ public class CrystalCycleView<T> extends LinearLayout {
     public CrystalCycleView(Context context, AttributeSet attrs) {
         super(context, attrs);
         TypedArray a = context.obtainStyledAttributes(attrs, R.styleable.CrystalCycleView);
-        canLoop = a.getBoolean(R.styleable.CrystalCycleView_canLoop,true);
+        canLoop = a.getBoolean(R.styleable.CrystalCycleView_canLoop,false);
         init(context);
     }
 

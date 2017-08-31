@@ -60,7 +60,7 @@ public class EaseChatRowVoice extends EaseChatRowFile{
             if (message.direct() == EMMessage.Direct.RECEIVE) {
                 voiceImageView.setImageResource(R.drawable.ease_chatfrom_voice_playing);
             } else {
-                voiceImageView.setImageResource(R.drawable.ease_chatto_voice_playing);
+                voiceImageView.setImageResource(R.drawable.ease_chatfrom_voice_playing);
             }
         }
         
