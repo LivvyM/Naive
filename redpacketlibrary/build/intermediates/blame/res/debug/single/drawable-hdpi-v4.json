@@ -220,6 +220,10 @@
         "source": "/home/livvy/AndroidStudioProjects/Naive/redpacketlibrary/build/intermediates/exploded-aar/Naive/easeui/unspecified/res/drawable-hdpi-v4/ease_video_play_btn_small_nor.png"
     },
     {
+        "merged": "/home/livvy/AndroidStudioProjects/Naive/redpacketlibrary/build/intermediates/res/merged/debug/drawable-hdpi-v4/ic_svg_default_logo.png",
+        "source": "/home/livvy/AndroidStudioProjects/Naive/redpacketlibrary/build/intermediates/exploded-aar/Naive/easeui/unspecified/res/drawable-hdpi-v4/ic_svg_default_logo.png"
+    },
+    {
         "merged": "/home/livvy/AndroidStudioProjects/Naive/redpacketlibrary/build/intermediates/res/merged/debug/drawable-hdpi-v4/ease_app_panel_video_icon.9.png",
         "source": "/home/livvy/AndroidStudioProjects/Naive/redpacketlibrary/build/intermediates/exploded-aar/Naive/easeui/unspecified/res/drawable-hdpi-v4/ease_app_panel_video_icon.9.png"
     },
@@ -288,12 +292,12 @@
         "source": "/home/livvy/AndroidStudioProjects/Naive/redpacketlibrary/build/intermediates/exploded-aar/Naive/easeui/unspecified/res/drawable-hdpi-v4/ease_dx_checkbox_off.png"
     },
     {
-        "merged": "/home/livvy/AndroidStudioProjects/Naive/redpacketlibrary/build/intermediates/res/merged/debug/drawable-hdpi-v4/ee_12.png",
-        "source": "/home/livvy/AndroidStudioProjects/Naive/redpacketlibrary/build/intermediates/exploded-aar/Naive/easeui/unspecified/res/drawable-hdpi-v4/ee_12.png"
-    },
-    {
         "merged": "/home/livvy/AndroidStudioProjects/Naive/redpacketlibrary/build/intermediates/res/merged/debug/drawable-hdpi-v4/ee_15.png",
         "source": "/home/livvy/AndroidStudioProjects/Naive/redpacketlibrary/build/intermediates/exploded-aar/Naive/easeui/unspecified/res/drawable-hdpi-v4/ee_15.png"
+    },
+    {
+        "merged": "/home/livvy/AndroidStudioProjects/Naive/redpacketlibrary/build/intermediates/res/merged/debug/drawable-hdpi-v4/ee_12.png",
+        "source": "/home/livvy/AndroidStudioProjects/Naive/redpacketlibrary/build/intermediates/exploded-aar/Naive/easeui/unspecified/res/drawable-hdpi-v4/ee_12.png"
     },
     {
         "merged": "/home/livvy/AndroidStudioProjects/Naive/redpacketlibrary/build/intermediates/res/merged/debug/drawable-hdpi-v4/ease_seabar_input.9.png",

@@ -2,10 +2,10 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
+    android:background="#F8F8F8"
     android:orientation="vertical"
     android:paddingBottom="4dp"
-    android:background="#F8F8F8"
-    android:paddingTop="4dp" >
+    android:paddingTop="4dp">
 
     <View
         android:layout_width="match_parent"
@@ -19,7 +19,7 @@
         android:background="#aaffffff"
         android:gravity="center_vertical"
         android:orientation="horizontal"
-        android:paddingTop="4dp" >
+        android:paddingTop="4dp">
 
         <Button
             android:id="@+id/btn_set_mode_voice"
@@ -47,8 +47,7 @@
             android:layout_marginTop="4dp"
             android:layout_weight="1"
             android:background="@drawable/ease_chat_press_speak_btn"
-            android:gravity="center"
-            >
+            android:gravity="center">
 
             <TextView
                 android:layout_width="wrap_content"
@@ -67,8 +66,8 @@
             android:layout_marginLeft="8dp"
             android:layout_marginRight="8dp"
             android:layout_weight="1"
-            android:visibility="gone"
-            android:gravity="bottom" >
+            android:gravity="bottom"
+            android:visibility="gone">
 
             <EditText
                 android:id="@+id/et_sendmessage"
@@ -76,40 +75,40 @@
                 android:layout_height="wrap_content"
                 android:layout_marginRight="35dip"
                 android:background="@null"
+                android:imeOptions="actionSend"
                 android:maxLines="3"
                 android:minHeight="40dp"
                 android:paddingBottom="3dp"
                 android:paddingLeft="1dp"
                 android:paddingRight="1dp"
                 android:paddingTop="3dp"
-                android:textSize="18sp"
-                android:imeOptions="actionSend"/>
+                android:textSize="18sp" />
 
-            <RelativeLayout 
+            <RelativeLayout
                 android:id="@+id/rl_face"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentRight="true"
-                android:layout_centerVertical="true"
-                >
-            <ImageView
-                android:id="@+id/iv_face_normal"
-                android:layout_width="24dip"
-                android:layout_height="24dip"
-                android:layout_margin="1dip"
-                android:scaleType="fitCenter"
-                android:src="@drawable/ic_face"
-                android:visibility="visible" />
+                android:layout_centerVertical="true">
 
-            <ImageView
-                android:id="@+id/iv_face_checked"
-                android:layout_width="22dp"
-                android:layout_height="22dp"
-                android:layout_margin="1dip"
-                android:scaleType="fitCenter"
-                android:src="@drawable/ease_chatting_biaoqing_btn_enable"
-                android:visibility="invisible" />
-            
+                <ImageView
+                    android:id="@+id/iv_face_normal"
+                    android:layout_width="24dip"
+                    android:layout_height="24dip"
+                    android:layout_margin="1dip"
+                    android:scaleType="fitCenter"
+                    android:src="@drawable/ic_face"
+                    android:visibility="visible" />
+
+                <ImageView
+                    android:id="@+id/iv_face_checked"
+                    android:layout_width="22dp"
+                    android:layout_height="22dp"
+                    android:layout_margin="1dip"
+                    android:scaleType="fitCenter"
+                    android:src="@drawable/ease_chatting_biaoqing_btn_enable"
+                    android:visibility="invisible" />
+
             </RelativeLayout>
         </RelativeLayout>
 

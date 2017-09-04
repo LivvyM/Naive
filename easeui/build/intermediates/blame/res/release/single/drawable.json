@@ -32,12 +32,12 @@
         "source": "/home/livvy/AndroidStudioProjects/Naive/easeui/build/intermediates/exploded-aar/com.android.support/appcompat-v7/24.2.1/res/drawable/abc_textfield_search_material.xml"
     },
     {
-        "merged": "/home/livvy/AndroidStudioProjects/Naive/easeui/build/intermediates/res/merged/release/drawable/abc_btn_default_mtrl_shape.xml",
-        "source": "/home/livvy/AndroidStudioProjects/Naive/easeui/build/intermediates/exploded-aar/com.android.support/appcompat-v7/24.2.1/res/drawable/abc_btn_default_mtrl_shape.xml"
-    },
-    {
         "merged": "/home/livvy/AndroidStudioProjects/Naive/easeui/build/intermediates/res/merged/release/drawable/ease_chatfrom_bg.xml",
         "source": "/home/livvy/AndroidStudioProjects/Naive/easeui/src/main/res/drawable/ease_chatfrom_bg.xml"
+    },
+    {
+        "merged": "/home/livvy/AndroidStudioProjects/Naive/easeui/build/intermediates/res/merged/release/drawable/abc_btn_default_mtrl_shape.xml",
+        "source": "/home/livvy/AndroidStudioProjects/Naive/easeui/build/intermediates/exploded-aar/com.android.support/appcompat-v7/24.2.1/res/drawable/abc_btn_default_mtrl_shape.xml"
     },
     {
         "merged": "/home/livvy/AndroidStudioProjects/Naive/easeui/build/intermediates/res/merged/release/drawable/ease_sidebar_background_pressed.xml",

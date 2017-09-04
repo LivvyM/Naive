@@ -204,6 +204,10 @@
         "source": "/home/livvy/AndroidStudioProjects/Naive/easeui/src/main/res/drawable-hdpi/ee_7.png"
     },
     {
+        "merged": "/home/livvy/AndroidStudioProjects/Naive/easeui/build/intermediates/res/merged/release/drawable-hdpi-v4/ic_svg_default_logo.png",
+        "source": "/home/livvy/AndroidStudioProjects/Naive/easeui/build/generated/res/pngs/release/drawable-hdpi/ic_svg_default_logo.png"
+    },
+    {
         "merged": "/home/livvy/AndroidStudioProjects/Naive/easeui/build/intermediates/res/merged/release/drawable-hdpi-v4/ee_1.png",
         "source": "/home/livvy/AndroidStudioProjects/Naive/easeui/src/main/res/drawable-hdpi/ee_1.png"
     },

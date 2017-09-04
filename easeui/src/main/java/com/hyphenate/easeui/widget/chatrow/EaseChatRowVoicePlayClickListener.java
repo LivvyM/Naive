@@ -29,6 +29,7 @@ import android.graphics.drawable.AnimationDrawable;
 import android.media.AudioManager;
 import android.media.MediaPlayer;
 import android.os.AsyncTask;
+import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.widget.BaseAdapter;
 import android.widget.ImageView;
@@ -50,6 +51,7 @@ public class EaseChatRowVoicePlayClickListener implements View.OnClickListener {
 	Activity activity;
 	private ChatType chatType;
 	private BaseAdapter adapter;
+	private RecyclerView.Adapter mAdapter;
 
 	public static boolean isPlaying = false;
 	public static EaseChatRowVoicePlayClickListener currentPlayListener = null;
@@ -65,12 +67,22 @@ public class EaseChatRowVoicePlayClickListener implements View.OnClickListener {
 		this.chatType = message.getChatType();
 	}
 
+	public EaseChatRowVoicePlayClickListener(EMMessage message, ImageView v, ImageView iv_read_status, RecyclerView.Adapter mAdapter, Activity context) {
+		this.message = message;
+		voiceBody = (EMVoiceMessageBody) message.getBody();
+		this.iv_read_status = iv_read_status;
+		this.mAdapter = mAdapter;
+		voiceIconView = v;
+		this.activity = context;
+		this.chatType = message.getChatType();
+	}
+
 	public void stopPlayVoice() {
 		voiceAnimation.stop();
 		if (message.direct() == EMMessage.Direct.RECEIVE) {
 			voiceIconView.setImageResource(R.drawable.ease_chatfrom_voice_playing);
 		} else {
-			voiceIconView.setImageResource(R.drawable.ease_chatto_voice_playing);
+			voiceIconView.setImageResource(R.drawable.ease_chatfrom_voice_playing);
 		}
 		// stop play voice
 		if (mediaPlayer != null) {

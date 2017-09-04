@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/mLayoutParent"
+    android:orientation="horizontal"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingLeft="8dp"
+    android:paddingRight="8dp"
+    android:paddingBottom="8dp"
+    android:gravity="center_vertical"
+    >
+
+    <TextView
+        android:id="@+id/mTextBullet"
+        android:layout_width="0dp"
+        android:layout_weight="1"
+        android:background="@drawable/shape_corner_3_grey_f8"
+        android:paddingTop="2dp"
+        android:paddingBottom="2dp"
+        android:paddingLeft="4dp"
+        android:paddingRight="4dp"
+        android:maxLines="2"
+        android:textColor="@color/white"
+        android:layout_height="wrap_content" />
+
+    <ImageView
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:layout_marginLeft="6dp"
+        android:src="@drawable/ic_head_default"
+        />
+
+</LinearLayout>

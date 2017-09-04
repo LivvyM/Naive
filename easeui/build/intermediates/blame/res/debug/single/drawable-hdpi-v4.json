@@ -276,12 +276,12 @@
         "source": "/home/livvy/AndroidStudioProjects/Naive/easeui/src/main/res/drawable-hdpi/ee_11.png"
     },
     {
-        "merged": "/home/livvy/AndroidStudioProjects/Naive/easeui/build/intermediates/res/merged/debug/drawable-hdpi-v4/ee_14.png",
-        "source": "/home/livvy/AndroidStudioProjects/Naive/easeui/src/main/res/drawable-hdpi/ee_14.png"
-    },
-    {
         "merged": "/home/livvy/AndroidStudioProjects/Naive/easeui/build/intermediates/res/merged/debug/drawable-hdpi-v4/abc_scrubber_control_to_pressed_mtrl_005.png",
         "source": "/home/livvy/AndroidStudioProjects/Naive/easeui/build/intermediates/exploded-aar/com.android.support/appcompat-v7/24.2.1/res/drawable-hdpi-v4/abc_scrubber_control_to_pressed_mtrl_005.png"
+    },
+    {
+        "merged": "/home/livvy/AndroidStudioProjects/Naive/easeui/build/intermediates/res/merged/debug/drawable-hdpi-v4/ee_14.png",
+        "source": "/home/livvy/AndroidStudioProjects/Naive/easeui/src/main/res/drawable-hdpi/ee_14.png"
     },
     {
         "merged": "/home/livvy/AndroidStudioProjects/Naive/easeui/build/intermediates/res/merged/debug/drawable-hdpi-v4/abc_list_pressed_holo_light.9.png",
@@ -534,6 +534,10 @@
     {
         "merged": "/home/livvy/AndroidStudioProjects/Naive/easeui/build/intermediates/res/merged/debug/drawable-hdpi-v4/abc_list_selector_disabled_holo_dark.9.png",
         "source": "/home/livvy/AndroidStudioProjects/Naive/easeui/build/intermediates/exploded-aar/com.android.support/appcompat-v7/24.2.1/res/drawable-hdpi-v4/abc_list_selector_disabled_holo_dark.9.png"
+    },
+    {
+        "merged": "/home/livvy/AndroidStudioProjects/Naive/easeui/build/intermediates/res/merged/debug/drawable-hdpi-v4/ic_svg_default_logo.png",
+        "source": "/home/livvy/AndroidStudioProjects/Naive/easeui/build/generated/res/pngs/debug/drawable-hdpi/ic_svg_default_logo.png"
     },
     {
         "merged": "/home/livvy/AndroidStudioProjects/Naive/easeui/build/intermediates/res/merged/debug/drawable-hdpi-v4/ease_mm_listitem_grey_normal.9.png",

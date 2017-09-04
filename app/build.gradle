@@ -8,7 +8,7 @@ android {
         applicationId "cc.livvy.naive"
         minSdkVersion 21
         targetSdkVersion 25
-        versionCode 1
+        versionCode 3
         versionName "1.0"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
         multiDexEnabled true
@@ -42,6 +42,7 @@ dependencies {
     compile project(':slidr')
     compile project(':redpacketlibrary')
     compile project(':easeui')
+    compile 'org.greenrobot:eventbus:3.0.0'
     compile "org.jetbrains.kotlin:kotlin-stdlib-jre7:$kotlin_version"
     compile 'com.android.support:appcompat-v7:25.3.0'
     compile 'com.readystatesoftware.systembartint:systembartint:1.0.3'

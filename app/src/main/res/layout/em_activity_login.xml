@@ -15,6 +15,7 @@
             android:layout_height="wrap_content"
             android:layout_centerHorizontal="true"
             android:layout_centerInParent="true"
+            android:visibility="invisible"
             android:src="@drawable/em_welcom_logo" />
     </RelativeLayout>
 
@@ -107,14 +108,13 @@
                 android:paddingBottom="7dp"
                 android:paddingTop="7dp"
                 android:text="@string/register"
+                android:visibility="gone"
                 android:textColor="@android:color/black"
                 android:textSize="18sp" />
 
             <Button
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="10dip"
-                android:layout_marginRight="10dip"
                 android:layout_weight="1"
                 android:background="@drawable/em_button_login_bg"
                 android:gravity="center"

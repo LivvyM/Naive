@@ -326,5 +326,9 @@
     {
         "merged": "/home/livvy/AndroidStudioProjects/Naive/redpacketlibrary/build/intermediates/res/merged/debug/drawable-xxhdpi-v4/em_red_packet_chatto_bg_normal.9.png",
         "source": "/home/livvy/AndroidStudioProjects/Naive/redpacketlibrary/res/drawable-xxhdpi/em_red_packet_chatto_bg_normal.9.png"
+    },
+    {
+        "merged": "/home/livvy/AndroidStudioProjects/Naive/redpacketlibrary/build/intermediates/res/merged/debug/drawable-xxhdpi-v4/ic_svg_default_logo.png",
+        "source": "/home/livvy/AndroidStudioProjects/Naive/redpacketlibrary/build/intermediates/exploded-aar/Naive/easeui/unspecified/res/drawable-xxhdpi-v4/ic_svg_default_logo.png"
     }
 ]

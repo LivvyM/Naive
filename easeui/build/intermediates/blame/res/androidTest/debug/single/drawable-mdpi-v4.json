@@ -1,5 +1,9 @@
 [
     {
+        "merged": "/home/livvy/AndroidStudioProjects/Naive/easeui/build/intermediates/res/merged/androidTest/debug/drawable-mdpi-v4/ic_svg_default_logo.png",
+        "source": "/home/livvy/AndroidStudioProjects/Naive/easeui/build/intermediates/bundles/debug/res/drawable-mdpi-v4/ic_svg_default_logo.png"
+    },
+    {
         "merged": "/home/livvy/AndroidStudioProjects/Naive/easeui/build/intermediates/res/merged/androidTest/debug/drawable-mdpi-v4/abc_list_longpressed_holo.9.png",
         "source": "/home/livvy/AndroidStudioProjects/Naive/easeui/build/intermediates/exploded-aar/com.android.support/appcompat-v7/24.2.1/res/drawable-mdpi-v4/abc_list_longpressed_holo.9.png"
     },
