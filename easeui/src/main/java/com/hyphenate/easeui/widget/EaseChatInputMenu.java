@@ -74,6 +74,14 @@ public class EaseChatInputMenu extends LinearLayout {
 
     }
 
+
+    public void setIsOwner(boolean isOwner){
+        // primary menu, use default if no customized one
+        if(chatPrimaryMenu != null){
+            chatPrimaryMenu.setOwnerModel(isOwner);
+        }
+    }
+
     /**
      * init view 
      * 
@@ -111,7 +119,7 @@ public class EaseChatInputMenu extends LinearLayout {
     public void init(){
         init(null);
     }
-    
+
     /**
      * set custom emojicon menu
      * @param customEmojiconMenu
@@ -157,6 +165,9 @@ public class EaseChatInputMenu extends LinearLayout {
             EaseChatExtendMenuItemClickListener listener) {
         chatExtendMenu.registerMenuItem(name, drawableRes, itemId, listener);
     }
+
+
+
 
     /**
      * register menu item

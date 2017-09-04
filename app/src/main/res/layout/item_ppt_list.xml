@@ -27,7 +27,6 @@
                 android:id="@+id/mTextTitle"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="8节课让你快速脱单"
                 android:textColor="@color/text_333"
                 android:textSize="14sp" />
 

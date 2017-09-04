@@ -545,6 +545,7 @@ public class EaseChatFragment extends EaseBaseFragment implements EMMessageListe
         ownerAdminList.add(room.getOwner());
         ownerAdminList.addAll(room.getAdminList());
         isOwner = ownerAdminList.contains(EMClient.getInstance().getCurrentUser());
+        inputMenu.setIsOwner(isOwner);
         if(chatFragmentHelper != null){
             chatFragmentHelper.onVerifyPermission(isOwner);
         }

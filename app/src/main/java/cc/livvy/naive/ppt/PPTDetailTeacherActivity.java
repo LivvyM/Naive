@@ -56,13 +56,21 @@ public class PPTDetailTeacherActivity extends AppBaseParamActivity {
     String toChatUsername;
     private String mTitle;
 
+    public static int page = 0;
+
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_pptdetail_teacher);
         EventBus.getDefault().register(this);
         setTitle(mTitle);
-        setRightDrawable(R.drawable.ic_svg_qun);
+        setRightDrawable(R.drawable.ic_chapter);
+        setRightOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                PPTDetailPlayActivity.showClass(PPTDetailTeacherActivity.this,toChatUsername);
+            }
+        });
 
         activityInstance = this;
         //get user id or group id
@@ -115,7 +123,12 @@ public class PPTDetailTeacherActivity extends AppBaseParamActivity {
                 list.add(item);
             }
         }
-        mCommentRecyclerView.setAdapter(new BulletAdapter(this, list));
+        mCommentRecyclerView.setAdapter(new BulletAdapter(list, new BulletAdapter.OnItemClickListener() {
+            @Override
+            public void onItemClick() {
+                CommentListActivity.showClass(PPTDetailTeacherActivity.this,toChatUsername);
+            }
+        }));
         mCommentRecyclerView.smoothScrollToPosition(list.size() - 1);
 
         scrollPage();
@@ -124,7 +137,6 @@ public class PPTDetailTeacherActivity extends AppBaseParamActivity {
     private List<Integer> localImages = new ArrayList<>();
 
     private void initCrystal() {
-        localImages.add(R.drawable.img_ppt_1);
         localImages.add(R.drawable.img_ppt_2);
         localImages.add(R.drawable.img_ppt_3);
         localImages.add(R.drawable.img_ppt_4);
@@ -144,6 +156,7 @@ public class PPTDetailTeacherActivity extends AppBaseParamActivity {
 
             @Override
             public void onPageSelected(int position) {
+                page = position;
                 EventBus.getDefault().post(new ChatEventBus(ChatEventBus.OPT_ACTION_SCROLL, position));
             }
 
@@ -156,15 +169,12 @@ public class PPTDetailTeacherActivity extends AppBaseParamActivity {
 
     private void initTab() {
         mListFragment.add(chatFragment);
-        mListFragment.add(new DemoFragment());
 
         mListTab.add("课堂");
-        mListTab.add("目录");
 
         mTabLayout.setTabMode(TabLayout.MODE_FIXED);
 
         mTabLayout.addTab(mTabLayout.newTab().setText(mListTab.get(0)));
-        mTabLayout.addTab(mTabLayout.newTab().setText(mListTab.get(1)));
 
         mViewPager.setAdapter(new TabAdapter(getSupportFragmentManager()));
         mTabLayout.setupWithViewPager(mViewPager);

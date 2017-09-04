@@ -58,6 +58,8 @@ public abstract class EaseChatPrimaryMenuBase extends RelativeLayout{
      * hide extend menu
      */
     public abstract void onExtendMenuContainerHide();
+
+    public abstract void setOwnerModel(boolean isOwner);
     
     
     /**

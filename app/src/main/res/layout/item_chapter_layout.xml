@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/white"
+    >
+
+    <LinearLayout
+        android:id="@+id/mLayoutParent"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/mTextChapterTime"
+            android:layout_width="wrap_content"
+            android:paddingLeft="8dp"
+            android:layout_height="wrap_content"
+            android:textColor="@color/text_999"
+            android:textSize="12sp"
+            />
+        <TextView
+            android:id="@+id/mTextChapterContent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="13sp"
+            android:textColor="@color/text_666"
+            android:paddingLeft="8dp"
+            android:paddingRight="8dp"
+            android:paddingTop="10dp"
+            android:paddingBottom="10dp"
+            />
+
+        <ImageView
+            android:id="@+id/voiceIconView"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_marginRight="8dp"
+            android:layout_marginLeft="8dp"
+            android:visibility="gone"
+            android:src="@drawable/ease_chatfrom_voice_playing"
+            />
+
+    </LinearLayout>
+
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/line_height"
+        android:background="@color/line"
+        />
+
+</LinearLayout>

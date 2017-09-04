@@ -12,10 +12,6 @@
         "source": "/home/livvy/AndroidStudioProjects/Naive/easeui/src/main/res/drawable-hdpi/ease_conversation_selected.png"
     },
     {
-        "merged": "/home/livvy/AndroidStudioProjects/Naive/easeui/build/intermediates/res/merged/debug/drawable-hdpi-v4/notify_panel_notification_icon_bg.png",
-        "source": "/home/livvy/AndroidStudioProjects/Naive/easeui/build/intermediates/exploded-aar/com.android.support/appcompat-v7/25.3.0/res/drawable-hdpi-v4/notify_panel_notification_icon_bg.png"
-    },
-    {
         "merged": "/home/livvy/AndroidStudioProjects/Naive/easeui/build/intermediates/res/merged/debug/drawable-hdpi-v4/ee_10.png",
         "source": "/home/livvy/AndroidStudioProjects/Naive/easeui/src/main/res/drawable-hdpi/ee_10.png"
     },
@@ -52,10 +48,6 @@
         "source": "/home/livvy/AndroidStudioProjects/Naive/easeui/build/intermediates/exploded-aar/com.android.support/appcompat-v7/24.2.1/res/drawable-hdpi-v4/abc_textfield_activated_mtrl_alpha.9.png"
     },
     {
-        "merged": "/home/livvy/AndroidStudioProjects/Naive/easeui/build/intermediates/res/merged/debug/drawable-hdpi-v4/notification_bg_normal.9.png",
-        "source": "/home/livvy/AndroidStudioProjects/Naive/easeui/build/intermediates/exploded-aar/com.android.support/appcompat-v7/25.3.0/res/drawable-hdpi-v4/notification_bg_normal.9.png"
-    },
-    {
         "merged": "/home/livvy/AndroidStudioProjects/Naive/easeui/build/intermediates/res/merged/debug/drawable-hdpi-v4/ease_record_animate_05.png",
         "source": "/home/livvy/AndroidStudioProjects/Naive/easeui/src/main/res/drawable-hdpi/ease_record_animate_05.png"
     },
@@ -86,10 +78,6 @@
     {
         "merged": "/home/livvy/AndroidStudioProjects/Naive/easeui/build/intermediates/res/merged/debug/drawable-hdpi-v4/abc_textfield_default_mtrl_alpha.9.png",
         "source": "/home/livvy/AndroidStudioProjects/Naive/easeui/build/intermediates/exploded-aar/com.android.support/appcompat-v7/24.2.1/res/drawable-hdpi-v4/abc_textfield_default_mtrl_alpha.9.png"
-    },
-    {
-        "merged": "/home/livvy/AndroidStudioProjects/Naive/easeui/build/intermediates/res/merged/debug/drawable-hdpi-v4/notification_bg_normal_pressed.9.png",
-        "source": "/home/livvy/AndroidStudioProjects/Naive/easeui/build/intermediates/exploded-aar/com.android.support/appcompat-v7/25.3.0/res/drawable-hdpi-v4/notification_bg_normal_pressed.9.png"
     },
     {
         "merged": "/home/livvy/AndroidStudioProjects/Naive/easeui/build/intermediates/res/merged/debug/drawable-hdpi-v4/abc_list_selector_disabled_holo_light.9.png",
@@ -288,12 +276,12 @@
         "source": "/home/livvy/AndroidStudioProjects/Naive/easeui/src/main/res/drawable-hdpi/ee_11.png"
     },
     {
-        "merged": "/home/livvy/AndroidStudioProjects/Naive/easeui/build/intermediates/res/merged/debug/drawable-hdpi-v4/ee_14.png",
-        "source": "/home/livvy/AndroidStudioProjects/Naive/easeui/src/main/res/drawable-hdpi/ee_14.png"
-    },
-    {
         "merged": "/home/livvy/AndroidStudioProjects/Naive/easeui/build/intermediates/res/merged/debug/drawable-hdpi-v4/abc_scrubber_control_to_pressed_mtrl_005.png",
         "source": "/home/livvy/AndroidStudioProjects/Naive/easeui/build/intermediates/exploded-aar/com.android.support/appcompat-v7/24.2.1/res/drawable-hdpi-v4/abc_scrubber_control_to_pressed_mtrl_005.png"
+    },
+    {
+        "merged": "/home/livvy/AndroidStudioProjects/Naive/easeui/build/intermediates/res/merged/debug/drawable-hdpi-v4/ee_14.png",
+        "source": "/home/livvy/AndroidStudioProjects/Naive/easeui/src/main/res/drawable-hdpi/ee_14.png"
     },
     {
         "merged": "/home/livvy/AndroidStudioProjects/Naive/easeui/build/intermediates/res/merged/debug/drawable-hdpi-v4/abc_list_pressed_holo_light.9.png",
@@ -334,10 +322,6 @@
     {
         "merged": "/home/livvy/AndroidStudioProjects/Naive/easeui/build/intermediates/res/merged/debug/drawable-hdpi-v4/ease_chatto_bg_normal.9.png",
         "source": "/home/livvy/AndroidStudioProjects/Naive/easeui/src/main/res/drawable-hdpi/ease_chatto_bg_normal.9.png"
-    },
-    {
-        "merged": "/home/livvy/AndroidStudioProjects/Naive/easeui/build/intermediates/res/merged/debug/drawable-hdpi-v4/notification_bg_low_pressed.9.png",
-        "source": "/home/livvy/AndroidStudioProjects/Naive/easeui/build/intermediates/exploded-aar/com.android.support/appcompat-v7/25.3.0/res/drawable-hdpi-v4/notification_bg_low_pressed.9.png"
     },
     {
         "merged": "/home/livvy/AndroidStudioProjects/Naive/easeui/build/intermediates/res/merged/debug/drawable-hdpi-v4/ease_search_clear_normal.png",
@@ -502,10 +486,6 @@
     {
         "merged": "/home/livvy/AndroidStudioProjects/Naive/easeui/build/intermediates/res/merged/debug/drawable-hdpi-v4/ease_chatfrom_bg_normal.9.png",
         "source": "/home/livvy/AndroidStudioProjects/Naive/easeui/src/main/res/drawable-hdpi/ease_chatfrom_bg_normal.9.png"
-    },
-    {
-        "merged": "/home/livvy/AndroidStudioProjects/Naive/easeui/build/intermediates/res/merged/debug/drawable-hdpi-v4/notification_bg_low_normal.9.png",
-        "source": "/home/livvy/AndroidStudioProjects/Naive/easeui/build/intermediates/exploded-aar/com.android.support/appcompat-v7/25.3.0/res/drawable-hdpi-v4/notification_bg_low_normal.9.png"
     },
     {
         "merged": "/home/livvy/AndroidStudioProjects/Naive/easeui/build/intermediates/res/merged/debug/drawable-hdpi-v4/ease_record_animate_11.png",

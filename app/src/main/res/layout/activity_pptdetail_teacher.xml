@@ -28,6 +28,7 @@
         app:tabIndicatorColor="@color/text_999"
         app:tabIndicatorHeight="3dp"
         app:tabMode="fixed"
+        android:visibility="gone"
         app:tabSelectedTextColor="@color/text_999" />
 
     <FrameLayout
@@ -46,7 +47,5 @@
             android:layout_marginBottom="50dp"
             android:layout_height="match_parent"/>
     </FrameLayout>
-
-
 
 </LinearLayout>

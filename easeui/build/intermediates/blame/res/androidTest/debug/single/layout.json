@@ -1,11 +1,11 @@
 [
     {
-        "merged": "/home/livvy/AndroidStudioProjects/Naive/easeui/build/intermediates/res/merged/androidTest/debug/layout/ease_fragment_conversation_list.xml",
-        "source": "/home/livvy/AndroidStudioProjects/Naive/easeui/build/intermediates/bundles/debug/res/layout/ease_fragment_conversation_list.xml"
-    },
-    {
         "merged": "/home/livvy/AndroidStudioProjects/Naive/easeui/build/intermediates/res/merged/androidTest/debug/layout/ease_search_bar_with_padding.xml",
         "source": "/home/livvy/AndroidStudioProjects/Naive/easeui/build/intermediates/bundles/debug/res/layout/ease_search_bar_with_padding.xml"
+    },
+    {
+        "merged": "/home/livvy/AndroidStudioProjects/Naive/easeui/build/intermediates/res/merged/androidTest/debug/layout/ease_fragment_conversation_list.xml",
+        "source": "/home/livvy/AndroidStudioProjects/Naive/easeui/build/intermediates/bundles/debug/res/layout/ease_fragment_conversation_list.xml"
     },
     {
         "merged": "/home/livvy/AndroidStudioProjects/Naive/easeui/build/intermediates/res/merged/androidTest/debug/layout/abc_action_menu_layout.xml",

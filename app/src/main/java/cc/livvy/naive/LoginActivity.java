@@ -35,6 +35,7 @@ import com.hyphenate.easeui.utils.EaseCommonUtils;
 
 import cc.livvy.naive.base.AppBaseActivity;
 import cc.livvy.naive.db.DemoDBManager;
+import cc.livvy.naive.ppt.RegisterActivity;
 
 /**
  * Login screen
@@ -207,7 +208,7 @@ public class LoginActivity extends AppBaseActivity {
 	 * @param view
 	 */
 	public void register(View view) {
-//		startActivityForResult(new Intent(this, RegisterActivity.class), 0);
+		startActivityForResult(new Intent(this, RegisterActivity.class), 0);
 	}
 
 	@Override

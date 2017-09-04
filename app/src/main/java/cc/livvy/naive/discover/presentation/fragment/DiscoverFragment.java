@@ -39,7 +39,7 @@ public class DiscoverFragment extends AppBaseFragment implements BaseQuickAdapte
     @Override
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-        initView(view);
+//        initView(view);
     }
 
     private void initView(View view){

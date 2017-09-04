@@ -263,6 +263,7 @@ public class PPTChatFragment extends EaseChatFragment implements EaseChatFragmen
             message.setAttribute("em_robot_message", isRobot);
         }
         message.setAttribute("em_send_owner", isOwner);
+        message.setAttribute("em_pager", PPTDetailTeacherActivity.page);
     }
 
     @Override
@@ -517,10 +518,10 @@ public class PPTChatFragment extends EaseChatFragment implements EaseChatFragmen
 
     @Subscribe(threadMode = ThreadMode.BACKGROUND)
     public void onEventMainThread(ChatEventBus event) {
-        if(event.opt == ChatEventBus.OPT_ACTION_SCROLL){
+        if (event.opt == ChatEventBus.OPT_ACTION_SCROLL) {
             EMMessage message = EMMessage.createTxtSendMessage("scroll", toChatUsername);
-            message.setAttribute("scroll_page",true);
-            message.setAttribute("scroll_page_index",event.page);
+            message.setAttribute("scroll_page", true);
+            message.setAttribute("scroll_page_index", event.page);
             sendMessage(message);
         }
     }

@@ -1,11 +1,11 @@
 [
     {
-        "merged": "/home/livvy/AndroidStudioProjects/Naive/redpacketlibrary/build/intermediates/res/merged/androidTest/debug/drawable-xxhdpi-v4/em_random_chatfrom_bg.png",
-        "source": "/home/livvy/AndroidStudioProjects/Naive/redpacketlibrary/build/intermediates/bundles/debug/res/drawable-xxhdpi-v4/em_random_chatfrom_bg.png"
-    },
-    {
         "merged": "/home/livvy/AndroidStudioProjects/Naive/redpacketlibrary/build/intermediates/res/merged/androidTest/debug/drawable-xxhdpi-v4/abc_textfield_search_default_mtrl_alpha.9.png",
         "source": "/home/livvy/AndroidStudioProjects/Naive/redpacketlibrary/build/intermediates/exploded-aar/com.android.support/appcompat-v7/24.2.1/res/drawable-xxhdpi-v4/abc_textfield_search_default_mtrl_alpha.9.png"
+    },
+    {
+        "merged": "/home/livvy/AndroidStudioProjects/Naive/redpacketlibrary/build/intermediates/res/merged/androidTest/debug/drawable-xxhdpi-v4/em_random_chatfrom_bg.png",
+        "source": "/home/livvy/AndroidStudioProjects/Naive/redpacketlibrary/build/intermediates/bundles/debug/res/drawable-xxhdpi-v4/em_random_chatfrom_bg.png"
     },
     {
         "merged": "/home/livvy/AndroidStudioProjects/Naive/redpacketlibrary/build/intermediates/res/merged/androidTest/debug/drawable-xxhdpi-v4/abc_scrubber_control_to_pressed_mtrl_005.png",
@@ -36,12 +36,12 @@
         "source": "/home/livvy/AndroidStudioProjects/Naive/redpacketlibrary/build/intermediates/exploded-aar/com.android.support/appcompat-v7/24.2.1/res/drawable-xxhdpi-v4/abc_ic_star_half_black_48dp.png"
     },
     {
-        "merged": "/home/livvy/AndroidStudioProjects/Naive/redpacketlibrary/build/intermediates/res/merged/androidTest/debug/drawable-xxhdpi-v4/rp_small_random_switch.png",
-        "source": "/home/livvy/AndroidStudioProjects/Naive/redpacketlibrary/build/intermediates/exploded-aar/com.hyphenate.redpacket/redpacket-alipay/1.1.2/res/drawable-xxhdpi-v4/rp_small_random_switch.png"
-    },
-    {
         "merged": "/home/livvy/AndroidStudioProjects/Naive/redpacketlibrary/build/intermediates/res/merged/androidTest/debug/drawable-xxhdpi-v4/rp_random_icon.png",
         "source": "/home/livvy/AndroidStudioProjects/Naive/redpacketlibrary/build/intermediates/exploded-aar/com.hyphenate.redpacket/redpacket-alipay/1.1.2/res/drawable-xxhdpi-v4/rp_random_icon.png"
+    },
+    {
+        "merged": "/home/livvy/AndroidStudioProjects/Naive/redpacketlibrary/build/intermediates/res/merged/androidTest/debug/drawable-xxhdpi-v4/rp_small_random_switch.png",
+        "source": "/home/livvy/AndroidStudioProjects/Naive/redpacketlibrary/build/intermediates/exploded-aar/com.hyphenate.redpacket/redpacket-alipay/1.1.2/res/drawable-xxhdpi-v4/rp_small_random_switch.png"
     },
     {
         "merged": "/home/livvy/AndroidStudioProjects/Naive/redpacketlibrary/build/intermediates/res/merged/androidTest/debug/drawable-xxhdpi-v4/abc_ic_star_black_16dp.png",

@@ -36,12 +36,12 @@
         "source": "/home/livvy/AndroidStudioProjects/Naive/redpacketlibrary/build/intermediates/exploded-aar/com.android.support/appcompat-v7/24.2.1/res/drawable-xxxhdpi-v4/abc_switch_track_mtrl_alpha.9.png"
     },
     {
-        "merged": "/home/livvy/AndroidStudioProjects/Naive/redpacketlibrary/build/intermediates/res/merged/androidTest/debug/drawable-xxxhdpi-v4/abc_ic_star_half_black_48dp.png",
-        "source": "/home/livvy/AndroidStudioProjects/Naive/redpacketlibrary/build/intermediates/exploded-aar/com.android.support/appcompat-v7/24.2.1/res/drawable-xxxhdpi-v4/abc_ic_star_half_black_48dp.png"
-    },
-    {
         "merged": "/home/livvy/AndroidStudioProjects/Naive/redpacketlibrary/build/intermediates/res/merged/androidTest/debug/drawable-xxxhdpi-v4/abc_btn_radio_to_on_mtrl_015.png",
         "source": "/home/livvy/AndroidStudioProjects/Naive/redpacketlibrary/build/intermediates/exploded-aar/com.android.support/appcompat-v7/24.2.1/res/drawable-xxxhdpi-v4/abc_btn_radio_to_on_mtrl_015.png"
+    },
+    {
+        "merged": "/home/livvy/AndroidStudioProjects/Naive/redpacketlibrary/build/intermediates/res/merged/androidTest/debug/drawable-xxxhdpi-v4/abc_ic_star_half_black_48dp.png",
+        "source": "/home/livvy/AndroidStudioProjects/Naive/redpacketlibrary/build/intermediates/exploded-aar/com.android.support/appcompat-v7/24.2.1/res/drawable-xxxhdpi-v4/abc_ic_star_half_black_48dp.png"
     },
     {
         "merged": "/home/livvy/AndroidStudioProjects/Naive/redpacketlibrary/build/intermediates/res/merged/androidTest/debug/drawable-xxxhdpi-v4/abc_ic_menu_cut_mtrl_alpha.png",

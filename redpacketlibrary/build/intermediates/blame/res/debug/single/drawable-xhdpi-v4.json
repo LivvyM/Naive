@@ -16,12 +16,12 @@
         "source": "/home/livvy/AndroidStudioProjects/Naive/redpacketlibrary/build/intermediates/exploded-aar/com.android.support/appcompat-v7/24.2.1/res/drawable-xhdpi-v4/abc_list_divider_mtrl_alpha.9.png"
     },
     {
-        "merged": "/home/livvy/AndroidStudioProjects/Naive/redpacketlibrary/build/intermediates/res/merged/debug/drawable-xhdpi-v4/ease_chat_takepic_normal.png",
-        "source": "/home/livvy/AndroidStudioProjects/Naive/redpacketlibrary/build/intermediates/exploded-aar/Naive/easeui/unspecified/res/drawable-xhdpi-v4/ease_chat_takepic_normal.png"
-    },
-    {
         "merged": "/home/livvy/AndroidStudioProjects/Naive/redpacketlibrary/build/intermediates/res/merged/debug/drawable-xhdpi-v4/ease_chat_send_btn_normal.9.png",
         "source": "/home/livvy/AndroidStudioProjects/Naive/redpacketlibrary/build/intermediates/exploded-aar/Naive/easeui/unspecified/res/drawable-xhdpi-v4/ease_chat_send_btn_normal.9.png"
+    },
+    {
+        "merged": "/home/livvy/AndroidStudioProjects/Naive/redpacketlibrary/build/intermediates/res/merged/debug/drawable-xhdpi-v4/ease_chat_takepic_normal.png",
+        "source": "/home/livvy/AndroidStudioProjects/Naive/redpacketlibrary/build/intermediates/exploded-aar/Naive/easeui/unspecified/res/drawable-xhdpi-v4/ease_chat_takepic_normal.png"
     },
     {
         "merged": "/home/livvy/AndroidStudioProjects/Naive/redpacketlibrary/build/intermediates/res/merged/debug/drawable-xhdpi-v4/abc_tab_indicator_mtrl_alpha.9.png",
@@ -48,12 +48,12 @@
         "source": "/home/livvy/AndroidStudioProjects/Naive/redpacketlibrary/build/intermediates/exploded-aar/com.android.support/appcompat-v7/24.2.1/res/drawable-xhdpi-v4/abc_ic_star_black_16dp.png"
     },
     {
-        "merged": "/home/livvy/AndroidStudioProjects/Naive/redpacketlibrary/build/intermediates/res/merged/debug/drawable-xhdpi-v4/abc_btn_switch_to_on_mtrl_00001.9.png",
-        "source": "/home/livvy/AndroidStudioProjects/Naive/redpacketlibrary/build/intermediates/exploded-aar/com.android.support/appcompat-v7/24.2.1/res/drawable-xhdpi-v4/abc_btn_switch_to_on_mtrl_00001.9.png"
-    },
-    {
         "merged": "/home/livvy/AndroidStudioProjects/Naive/redpacketlibrary/build/intermediates/res/merged/debug/drawable-xhdpi-v4/ic_head_default.png",
         "source": "/home/livvy/AndroidStudioProjects/Naive/redpacketlibrary/build/intermediates/exploded-aar/Naive/easeui/unspecified/res/drawable-xhdpi-v4/ic_head_default.png"
+    },
+    {
+        "merged": "/home/livvy/AndroidStudioProjects/Naive/redpacketlibrary/build/intermediates/res/merged/debug/drawable-xhdpi-v4/abc_btn_switch_to_on_mtrl_00001.9.png",
+        "source": "/home/livvy/AndroidStudioProjects/Naive/redpacketlibrary/build/intermediates/exploded-aar/com.android.support/appcompat-v7/24.2.1/res/drawable-xhdpi-v4/abc_btn_switch_to_on_mtrl_00001.9.png"
     },
     {
         "merged": "/home/livvy/AndroidStudioProjects/Naive/redpacketlibrary/build/intermediates/res/merged/debug/drawable-xhdpi-v4/abc_list_selector_disabled_holo_dark.9.png",

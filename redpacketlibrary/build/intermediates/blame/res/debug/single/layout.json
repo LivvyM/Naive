@@ -52,12 +52,12 @@
         "source": "/home/livvy/AndroidStudioProjects/Naive/redpacketlibrary/build/intermediates/exploded-aar/com.android.support/appcompat-v7/24.2.1/res/layout/notification_template_lines.xml"
     },
     {
-        "merged": "/home/livvy/AndroidStudioProjects/Naive/redpacketlibrary/build/intermediates/res/merged/debug/layout/ease_widget_switch_button.xml",
-        "source": "/home/livvy/AndroidStudioProjects/Naive/redpacketlibrary/build/intermediates/exploded-aar/Naive/easeui/unspecified/res/layout/ease_widget_switch_button.xml"
-    },
-    {
         "merged": "/home/livvy/AndroidStudioProjects/Naive/redpacketlibrary/build/intermediates/res/merged/debug/layout/rp_error_page.xml",
         "source": "/home/livvy/AndroidStudioProjects/Naive/redpacketlibrary/build/intermediates/exploded-aar/com.hyphenate.redpacket/redpacket-alipay/1.1.2/res/layout/rp_error_page.xml"
+    },
+    {
+        "merged": "/home/livvy/AndroidStudioProjects/Naive/redpacketlibrary/build/intermediates/res/merged/debug/layout/ease_widget_switch_button.xml",
+        "source": "/home/livvy/AndroidStudioProjects/Naive/redpacketlibrary/build/intermediates/exploded-aar/Naive/easeui/unspecified/res/layout/ease_widget_switch_button.xml"
     },
     {
         "merged": "/home/livvy/AndroidStudioProjects/Naive/redpacketlibrary/build/intermediates/res/merged/debug/layout/abc_action_mode_close_item_material.xml",
@@ -76,12 +76,12 @@
         "source": "/home/livvy/AndroidStudioProjects/Naive/redpacketlibrary/build/intermediates/exploded-aar/com.android.support/appcompat-v7/24.2.1/res/layout/abc_action_menu_layout.xml"
     },
     {
-        "merged": "/home/livvy/AndroidStudioProjects/Naive/redpacketlibrary/build/intermediates/res/merged/debug/layout/ease_fragment_conversation_list.xml",
-        "source": "/home/livvy/AndroidStudioProjects/Naive/redpacketlibrary/build/intermediates/exploded-aar/Naive/easeui/unspecified/res/layout/ease_fragment_conversation_list.xml"
-    },
-    {
         "merged": "/home/livvy/AndroidStudioProjects/Naive/redpacketlibrary/build/intermediates/res/merged/debug/layout/abc_action_mode_bar.xml",
         "source": "/home/livvy/AndroidStudioProjects/Naive/redpacketlibrary/build/intermediates/exploded-aar/com.android.support/appcompat-v7/24.2.1/res/layout/abc_action_mode_bar.xml"
+    },
+    {
+        "merged": "/home/livvy/AndroidStudioProjects/Naive/redpacketlibrary/build/intermediates/res/merged/debug/layout/ease_fragment_conversation_list.xml",
+        "source": "/home/livvy/AndroidStudioProjects/Naive/redpacketlibrary/build/intermediates/exploded-aar/Naive/easeui/unspecified/res/layout/ease_fragment_conversation_list.xml"
     },
     {
         "merged": "/home/livvy/AndroidStudioProjects/Naive/redpacketlibrary/build/intermediates/res/merged/debug/layout/abc_dialog_title_material.xml",
@@ -92,32 +92,32 @@
         "source": "/home/livvy/AndroidStudioProjects/Naive/redpacketlibrary/build/intermediates/exploded-aar/Naive/easeui/unspecified/res/layout/ease_search_bar_with_padding.xml"
     },
     {
-        "merged": "/home/livvy/AndroidStudioProjects/Naive/redpacketlibrary/build/intermediates/res/merged/debug/layout/ease_scroll_tab_item.xml",
-        "source": "/home/livvy/AndroidStudioProjects/Naive/redpacketlibrary/build/intermediates/exploded-aar/Naive/easeui/unspecified/res/layout/ease_scroll_tab_item.xml"
-    },
-    {
-        "merged": "/home/livvy/AndroidStudioProjects/Naive/redpacketlibrary/build/intermediates/res/merged/debug/layout/rp_received_record_list_header.xml",
-        "source": "/home/livvy/AndroidStudioProjects/Naive/redpacketlibrary/build/intermediates/exploded-aar/com.hyphenate.redpacket/redpacket-alipay/1.1.2/res/layout/rp_received_record_list_header.xml"
+        "merged": "/home/livvy/AndroidStudioProjects/Naive/redpacketlibrary/build/intermediates/res/merged/debug/layout/ease_layout_chat_primary_menu.xml",
+        "source": "/home/livvy/AndroidStudioProjects/Naive/redpacketlibrary/build/intermediates/exploded-aar/Naive/easeui/unspecified/res/layout/ease_layout_chat_primary_menu.xml"
     },
     {
         "merged": "/home/livvy/AndroidStudioProjects/Naive/redpacketlibrary/build/intermediates/res/merged/debug/layout/em_row_received_random_packet.xml",
         "source": "/home/livvy/AndroidStudioProjects/Naive/redpacketlibrary/res/layout/em_row_received_random_packet.xml"
     },
     {
-        "merged": "/home/livvy/AndroidStudioProjects/Naive/redpacketlibrary/build/intermediates/res/merged/debug/layout/ease_layout_chat_primary_menu.xml",
-        "source": "/home/livvy/AndroidStudioProjects/Naive/redpacketlibrary/build/intermediates/exploded-aar/Naive/easeui/unspecified/res/layout/ease_layout_chat_primary_menu.xml"
+        "merged": "/home/livvy/AndroidStudioProjects/Naive/redpacketlibrary/build/intermediates/res/merged/debug/layout/rp_received_record_list_header.xml",
+        "source": "/home/livvy/AndroidStudioProjects/Naive/redpacketlibrary/build/intermediates/exploded-aar/com.hyphenate.redpacket/redpacket-alipay/1.1.2/res/layout/rp_received_record_list_header.xml"
+    },
+    {
+        "merged": "/home/livvy/AndroidStudioProjects/Naive/redpacketlibrary/build/intermediates/res/merged/debug/layout/ease_scroll_tab_item.xml",
+        "source": "/home/livvy/AndroidStudioProjects/Naive/redpacketlibrary/build/intermediates/exploded-aar/Naive/easeui/unspecified/res/layout/ease_scroll_tab_item.xml"
     },
     {
         "merged": "/home/livvy/AndroidStudioProjects/Naive/redpacketlibrary/build/intermediates/res/merged/debug/layout/rp_open_exclusive_packet_dialog.xml",
         "source": "/home/livvy/AndroidStudioProjects/Naive/redpacketlibrary/build/intermediates/exploded-aar/com.hyphenate.redpacket/redpacket-alipay/1.1.2/res/layout/rp_open_exclusive_packet_dialog.xml"
     },
     {
-        "merged": "/home/livvy/AndroidStudioProjects/Naive/redpacketlibrary/build/intermediates/res/merged/debug/layout/rp_group_member_header.xml",
-        "source": "/home/livvy/AndroidStudioProjects/Naive/redpacketlibrary/build/intermediates/exploded-aar/com.hyphenate.redpacket/redpacket-alipay/1.1.2/res/layout/rp_group_member_header.xml"
-    },
-    {
         "merged": "/home/livvy/AndroidStudioProjects/Naive/redpacketlibrary/build/intermediates/res/merged/debug/layout/rp_fragment_single_packet_detail.xml",
         "source": "/home/livvy/AndroidStudioProjects/Naive/redpacketlibrary/build/intermediates/exploded-aar/com.hyphenate.redpacket/redpacket-alipay/1.1.2/res/layout/rp_fragment_single_packet_detail.xml"
+    },
+    {
+        "merged": "/home/livvy/AndroidStudioProjects/Naive/redpacketlibrary/build/intermediates/res/merged/debug/layout/rp_group_member_header.xml",
+        "source": "/home/livvy/AndroidStudioProjects/Naive/redpacketlibrary/build/intermediates/exploded-aar/com.hyphenate.redpacket/redpacket-alipay/1.1.2/res/layout/rp_group_member_header.xml"
     },
     {
         "merged": "/home/livvy/AndroidStudioProjects/Naive/redpacketlibrary/build/intermediates/res/merged/debug/layout/rp_details_list_header.xml",
